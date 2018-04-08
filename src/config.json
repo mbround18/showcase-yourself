@@ -2,23 +2,37 @@
   "name": "Michael Bruno",
   "profile": {
     "profile_pic_url": "https://cloud.boop.ninja/s/5Hk7V8wH3WhN9Gg/download",
-    "tag_line": "Currently Actively Seeking Employment.",
+    "tag_line": "Actively seeking new opportunities",
+    "actively_looking": true,
+    "looking_for": [
+      "Software Developer",
+      "Software Developer in Test",
+      "Quality Assurance Engineer",
+      "DevOps Engineer"
+    ],
     "skills": [
       "Ruby",
       "Selenium",
       "Angular 5",
-      "SQL"
+      "SQL",
+      "SaltStack",
+      "HTML/HAML",
+      "CSS",
+      "JavaScript"
     ]
   },
   "linked_in": {
+    "active": true,
     "username": "michael-bruno-89a89666",
     "url": "https://www.linkedin.com/in/michael-bruno-89a89666/"
   },
   "github": {
+    "active": true,
     "username": "mbround18",
     "url": "https://github.com/mbround18"
   },
   "discord": {
+    "active": true,
     "username": "",
     "url": "https://discord.boop.ninja"
   }

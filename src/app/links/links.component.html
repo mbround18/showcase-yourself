@@ -1,41 +1,21 @@
 <!--<div class="uk-flex uk-flex-center uk-width-1-1@s">-->
 <div class=" uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
-  <div id="linkedin_link">
+  <div *ngIf="linkedin_data.active" id="linkedin_link">
     <a [href]="linkedin_data.url">
       <img class="uk-align-center"
            src="assets/linked-in/In-2C-128px-TM.png"
            alt="LinkedIn"></a>
   </div>
-  <div id="github_link">
+  <div *ngIf="github_data.active" id="github_link">
     <a [href]="github_data.url">
       <img class="uk-align-center"
            src="assets/github/GitHub-Mark-Light-120px-plus.png"
            alt="Github"></a>
   </div>
-  <div id="discord_link">
+  <div *ngIf="discord_data.active" id="discord_link">
     <a [href]="discord_data.url">
       <img class="uk-align-center"
            src="assets/discord/Discord-Logo-White.png"
            alt="Discord"></a>
   </div>
 </div>
-<!--<div uk-grid class="uk-grid-small uk-hidden@s uk-child-width-1-1@s">-->
-  <!--<div id="linkedin_link" class="uk-card uk-card-body">-->
-    <!--<a [href]="linkedin_data.url">-->
-      <!--<img class="uk-align-center"-->
-           <!--src="assets/linked-in/In-2C-128px-TM.png"-->
-           <!--alt="LinkedIn"></a>-->
-  <!--</div>-->
-  <!--<div id="github_link" class="uk-card uk-card-body">-->
-    <!--<a [href]="github_data.url">-->
-      <!--<img class="uk-align-center"-->
-           <!--src="assets/github/GitHub-Mark-120px-plus.png"-->
-           <!--alt="Github"></a>-->
-  <!--</div>-->
-  <!--<div id="discord_link" class="uk-card uk-card-body">-->
-    <!--<a [href]="discord_data.url">-->
-      <!--<img class="uk-align-center"-->
-           <!--src="assets/discord/Discord-Logo-White.png"-->
-           <!--alt="Discord"></a>-->
-  <!--</div>-->
-<!--</div>-->

@@ -1,23 +1,15 @@
-<!--<div class="crop">-->
-  <!--<img class="uk-border-rounded uk-responsive-height uk-responsive-width" [src]="profile_data.profile_pic_url" alt="Profile Picture">-->
-<!--</div>-->
-<!--<div>-->
-  <!--<p>{{ profile_data.tag_line }}</p>-->
-<!--</div>-->
-
-
-
-<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
-  <div class="uk-card-media-left uk-cover-container">
-    <!--<img [src]="profile_data.profile_pic_url" alt="Profile Picture" uk-cover>-->
+<div class="uk-card uk-card-default uk-grid-collapse uk-margin" uk-grid>
+  <div class="uk-card-media-left uk-cover-container uk-width-1-2@s">
     <img class="uk-responsive-width uk-responsive-height" style="overflow: hidden;" [src]="profile_data.profile_pic_url" alt="Profile Picture">
-    <!--<canvas width="600" height="400"><img [src]="profile_data.profile_pic_url" alt="Profile Picture" uk-cover></canvas>-->
   </div>
-  <div>
-    <div class="uk-card-body">
-      <h3 class="uk-card-title" style="color: white;">{{ name }}</h3>
-      <p>{{ profile_data.tag_line }}</p>
-      <p>{{ profile_data.skills.join(',') }}</p>
-    </div>
+  <div id="name_tag_line" class="uk-height-small uk-width-1-2@s">
+    <h2 class="uk-card-title uk-margin-small-left" style="color: white;">{{ name }}</h2>
+    <p class="uk-text-capitalize uk-margin-small-left">{{ profile_data.tag_line }}</p>
+    <h4 class="uk-margin-small-left">Brief skill set: </h4>
+    <p class="uk-panel uk-panel-box uk-text-break uk-margin-small-left">{{ profile_data.skills.join(', ') }}</p>
+  </div>
+  <div *ngIf="profile_data.actively_looking" id="actively_looking" class="uk-width-expand@s">
+    <h4 class="uk-margin-small-left">Looking for position like: </h4>
+    <p class="uk-panel uk-panel-box uk-text-break uk-margin-small-left">{{ profile_data.looking_for.join(', ') }}</p><br>
   </div>
 </div>

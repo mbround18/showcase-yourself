@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigService} from './config.service';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    $('#requires_js_enabled').remove();
     this.getConfig();
   }
 
