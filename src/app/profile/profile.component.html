@@ -1,0 +1,22 @@
+<!--<div class="crop">-->
+  <!--<img class="uk-border-rounded uk-responsive-height uk-responsive-width" [src]="profile_data.profile_pic_url" alt="Profile Picture">-->
+<!--</div>-->
+<!--<div>-->
+  <!--<p>{{ profile_data.tag_line }}</p>-->
+<!--</div>-->
+
+
+
+<div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+  <div class="uk-card-media-left uk-cover-container">
+    <!--<img [src]="profile_data.profile_pic_url" alt="Profile Picture" uk-cover>-->
+    <img class="uk-responsive-width uk-responsive-height" style="overflow: hidden;" [src]="profile_data.profile_pic_url" alt="Profile Picture">
+    <!--<canvas width="600" height="400"><img [src]="profile_data.profile_pic_url" alt="Profile Picture" uk-cover></canvas>-->
+  </div>
+  <div>
+    <div class="uk-card-body">
+      <h3 class="uk-card-title" style="color: white;">{{ name }}</h3>
+      <p>{{ profile_data.tag_line }}</p>
+    </div>
+  </div>
+</div>
