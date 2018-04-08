@@ -7,6 +7,7 @@ export namespace ConfigData {
   export interface Profile {
     profile_pic_url: string;
     tag_line: string;
+    skills: string[];
   }
 
   export interface Discord {
