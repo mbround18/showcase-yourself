@@ -12,6 +12,7 @@ export class AppComponent implements OnInit {
 
   public config;
   public profile_data;
+  public discord_data;
   public github_data;
   public linkedin_data;
 
@@ -32,6 +33,7 @@ export class AppComponent implements OnInit {
       () => {
         this.isConfigLoaded = true;
         this.profile_data = this.config.profile;
+        this.discord_data = this.config.discord;
         this.github_data = this.config.github;
         this.linkedin_data = this.config.linked_in;
       }

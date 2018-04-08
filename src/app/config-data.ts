@@ -9,14 +9,17 @@ export namespace ConfigData {
     tag_line: string;
   }
 
-
-  export interface LinkedIn {
+  export interface Discord {
     username: string;
     url: string;
   }
 
-
   export interface Github {
+    username: string;
+    url: string;
+  }
+
+  export interface LinkedIn {
     username: string;
     url: string;
   }
@@ -25,8 +28,9 @@ export namespace ConfigData {
   export interface Base {
     name: string;
     profile: Profile;
-    linked_in: LinkedIn;
+    discord: Discord;
     github: Github;
+    linked_in: LinkedIn;
   }
 
 }
