@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ConfigService} from './config.service';
+import {Meta} from '@angular/platform-browser';
 import * as $ from 'jquery';
 
 @Component({
@@ -17,7 +18,7 @@ export class AppComponent implements OnInit {
   public github_data;
   public linkedin_data;
 
-  constructor(private _configService: ConfigService) {
+  constructor(private _configService: ConfigService, private _meta: Meta) {
 
   }
 
@@ -38,7 +39,17 @@ export class AppComponent implements OnInit {
         this.discord_data = this.config.discord;
         this.github_data = this.config.github;
         this.linkedin_data = this.config.linked_in;
+        this.setMetaTags();
       }
     );
+  }
+
+  setMetaTags() {
+    this._meta.addTags([
+      {property: 'og:title', content: this.config.name},
+      {property: 'og:description', content: this.profile_data.tag_line},
+      {property: 'og:image', content: this.profile_data.profile_pic_url},
+      {property: 'og:url', content: `${window.location.hostname}${window.location.pathname}`}
+    ]);
   }
 }
