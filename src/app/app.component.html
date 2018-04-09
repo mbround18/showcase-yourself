@@ -1,10 +1,7 @@
-<!--<div class="uk-grid center-this" style="height: auto; width: auto;">-->
-
-<div class="uk-margin-top"></div>
 <div *ngIf="!isConfigLoaded">
   <span uk-spinner="ratio: 4.5" class="center-this"></span>
 </div>
-<div class="uk-margin-top"></div>
+<div class="uk-margin-top uk-hidden@s uk-visible@m"></div>
 <div id="requires_js_enabled">
   <h1 class="center-this">This site requires JavaScript to be enabled.</h1>
 </div>
@@ -13,12 +10,13 @@
   <div *ngIf="isConfigLoaded">
     <div class="uk-child-width-1-1">
       <div>
-        <app-profile [name]="config.name" [profile_data]="profile_data"></app-profile>
+        <app-profile [name]="config.name"
+                     [profile_data]="profile_data"></app-profile>
       </div>
-
       <div>
-        <app-links [linkedin_data]="linkedin_data" [github_data]="github_data"
-                   [discord_data]="discord_data"></app-links>
+        <app-links [discord_data]="discord_data"
+                   [github_data]="github_data"
+                   [linkedin_data]="linkedin_data"></app-links>
       </div>
     </div>
   </div>
