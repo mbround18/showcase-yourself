@@ -15,8 +15,11 @@ export class ConfigService {
   constructor(private http: HttpClient) {
   }
 
+  getCustomConfig() {
+    return this.http.get('assets/config/config.json').map(res => res as ConfigData.Base);
+  }
   // Uses http.get() to load data from a single API endpoint
-  getConfig(): Observable<ConfigData.Base> {
+  getDefaultConfig(): Observable<ConfigData.Base> {
     return this.http.get('/config.json').map(res => res as ConfigData.Base);
   }
 

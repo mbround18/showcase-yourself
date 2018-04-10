@@ -15,7 +15,7 @@ img {
   #links-mobile-view{ display: none !important; }
   img {
     width:  auto;
-    height: 10em;
+    height: 9em;
     overflow: visible;
   }
 }
