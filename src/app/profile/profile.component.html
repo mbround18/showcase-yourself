@@ -3,13 +3,13 @@
     <img class="uk-responsive-width uk-responsive-height" style="overflow: hidden;" [src]="profile_data.profile_pic_url" alt="Profile Picture">
   </div>
   <div id="name_tag_line" class="uk-width-1-2@s">
-    <h2 class="uk-card-title uk-margin-small-left uk-margin-top" style="color: white;">{{ name }}</h2>
+    <h2 class="uk-card-title uk-margin-small-left uk-margin-small-top" style="color: white;">{{ name }}</h2>
     <p class="uk-text-capitalize uk-margin-small-left">{{ profile_data.tag_line }}</p>
     <h4 class="uk-margin-small-left">Brief skill set: </h4>
     <p class="uk-panel uk-panel-box uk-text-break uk-margin-small-left uk-margin-right">{{ profile_data.skills.join(', ') }}</p>
-  </div><br>
-  <div *ngIf="profile_data.actively_looking" id="actively_looking" class="uk-width-expand@s uk-margin-top">
-    <h4 class="uk-margin-small-left">Looking for position like: </h4>
-    <p class="uk-panel uk-panel-box uk-text-break uk-margin-small-left uk-margin-small-right">{{ profile_data.looking_for.join(', ') }}</p><br>
+    <div *ngIf="profile_data.actively_looking" id="actively_looking">
+      <h4 class="uk-margin-small-left">Looking for position like: </h4>
+      <p class="uk-panel uk-panel-box uk-text-break uk-margin-small-left uk-margin-small-right">{{ profile_data.looking_for.join(', ') }}</p>
+    </div>
   </div>
 </div>

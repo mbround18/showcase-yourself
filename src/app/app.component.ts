@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   public profile_data;
   public discord_data;
   public github_data;
-  public linkedin_data;
+  public linked_in_data;
 
   constructor(private _configService: ConfigService, private _meta: Meta) {
 
@@ -38,7 +38,7 @@ export class AppComponent implements OnInit {
         this.profile_data = this.config.profile;
         this.discord_data = this.config.discord;
         this.github_data = this.config.github;
-        this.linkedin_data = this.config.linked_in;
+        this.linked_in_data = this.config.linked_in;
         this.setMetaTags();
       }
     );

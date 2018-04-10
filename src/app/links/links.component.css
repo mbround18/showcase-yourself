@@ -2,3 +2,20 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@media only screen and (max-width: 479px) {
+  #links-desktop-view{ display: none !important; }
+  img {
+    width:  auto;
+    height: 5em;
+    overflow: visible;
+  }
+}
+@media only screen and (min-width: 480px) {
+  #links-mobile-view{ display: none !important; }
+  img {
+    width:  auto;
+    height: 10em;
+    overflow: visible;
+  }
+}
