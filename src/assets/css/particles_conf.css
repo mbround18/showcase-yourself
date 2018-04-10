@@ -1,7 +1,7 @@
-/* ---- reset ---- */
+ /*---- reset ---- */
 body {
   margin: 0;
-  font: normal 80% Arial, Helvetica, sans-serif;
+  /*font: normal 80% Arial, Helvetica, sans-serif;*/
 }
 
 canvas {
@@ -27,17 +27,17 @@ canvas {
   left: 0;
   width: 80px;
   color: #13E8E9;
-  font-size: .8em;
+  /*font-size: .8em;*/
   text-align: left;
   text-indent: 4px;
   line-height: 14px;
   padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+  /*font-family: Helvetica, Arial, sans-serif;*/
+  /*font-weight: bold;*/
 }
 
 .js-count-particles {
-  font-size: 1.1em;
+  /*font-size: 1.1em;*/
   display: none;
 }
 

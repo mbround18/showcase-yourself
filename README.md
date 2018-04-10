@@ -1,27 +1,21 @@
-# Michael.Bruno.Fyi
+# Simple Professional Website!
+Hello! Im sure you want something simple and easy for a professional presentable website without using wordpress or straight coding html/js/css. 
+Well I have taken the time to build just that! This is a very simple professional website that showcases you and what you'd like!
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
+# Pre-requisites
+You must have the following installed through your package manager:
+1) `nodejs`
+1) `npm`
+1) `nginx` or `apache`
 
-## Development server
+You must have the following installed globally through npm:
+1) `yarn`
+1) `@angular/cli`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Installation
+1) Clone the repo
+2) Run `yarn install`
+3) Copy the config from `path/to/repo/src/config.json` to `path/to/repo/src/assets/config/config.json`
+4) Make the modifications you need to the config at `path/to/repo/src/assets/config/config.json`
+5) Build the project with `ng build --prod --build-optimizer`
+6) Move the files from `path/to/repo/dist` to your web directory. 
