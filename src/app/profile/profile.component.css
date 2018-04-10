@@ -9,3 +9,9 @@
   /*height: 20em;*/
   /*margin-bottom: -5em;*/
 /*}*/
+img {
+  height: 100%;
+  width: auto;
+  overflow: hidden;
+  object-fit: contain;
+}

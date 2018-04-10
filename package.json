@@ -23,6 +23,7 @@
     "@angular/router": "^5.2.0",
     "core-js": "^2.4.1",
     "jquery": "^3.3.1",
+    "particles.js": "^2.0.0",
     "rxjs": "^5.5.6",
     "uikit": "^3.0.0-beta.42",
     "zone.js": "^0.8.19"

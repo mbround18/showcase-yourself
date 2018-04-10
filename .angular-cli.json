@@ -22,12 +22,15 @@
       "styles": [
         "../node_modules/uikit/dist/css/uikit.min.css",
         "../node_modules/uikit/dist/css/uikit-rtl.min.css",
-        "styles.css"
+        "styles.css",
+        "assets/css/particles_conf.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
         "../node_modules/uikit/dist/js/uikit.min.js",
-        "../node_modules/uikit/dist/js/uikit-icons.min.js"
+        "../node_modules/uikit/dist/js/uikit-icons.min.js",
+        "../node_modules/particles.js/particles.js",
+        "assets/js/particles_conf.js"
       ],
       "environmentSource": "environments/environment.ts",
       "environments": {
