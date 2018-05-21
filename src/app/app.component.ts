@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ConfigService} from './config.service';
 import {Meta, Title} from '@angular/platform-browser';
 import * as $ from 'jquery';
+import {ConfigData} from './config-data';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,6 @@ import * as $ from 'jquery';
 })
 export class AppComponent implements OnInit {
 
-  isConfigLoaded = false;
 
   public config;
   public profile_data;
@@ -25,44 +25,59 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     $('#requires_js_enabled').remove();
-    this.getCustomConfig();
+    this.getConfig();
   }
 
-  getDefaultConfig() {
+
+  setVariables(config: ConfigData.Base) {
+    this.profile_data = config.profile;
+    this.discord_data = config.discord;
+    this.github_data = config.github;
+    this.linked_in_data = config.linked_in;
+    this.setMetaTags();
+    this._title.setTitle(this.config.name);
+  }
+
+
+  getConfig() {
     this._configService.getDefaultConfig().subscribe(
       data => {
         this.config = data;
       },
       err => console.log(err),
       () => {
-        this.isConfigLoaded = true;
-        this.profile_data = this.config.profile;
-        this.discord_data = this.config.discord;
-        this.github_data = this.config.github;
-        this.linked_in_data = this.config.linked_in;
-        this.setMetaTags();
-        this._title.setTitle(this.config.name);
+        this.setVariables(this.config);
       }
     );
   }
 
-  getCustomConfig() {
-    this._configService.getCustomConfig().subscribe(
-      data => {
-        this.config = data;
-      },
-      err => this.getDefaultConfig(),
-      () => {
-        this.isConfigLoaded = true;
-        this.profile_data = this.config.profile;
-        this.discord_data = this.config.discord;
-        this.github_data = this.config.github;
-        this.linked_in_data = this.config.linked_in;
-        this.setMetaTags();
-        document.title = this.config.name;
-      }
-    );
-  }
+  // getDefaultConfig() {
+  //   this._configService.getDefaultConfig().subscribe(
+  //     data => {
+  //       this.config = data;
+  //     },
+  //     err => console.log(err),
+  //     () => {
+  //       this.setVariables(this.config);
+  //     }
+  //   );
+  // }
+  //
+  // getCustomConfig() {
+  //   this._configService.getCustomConfig().subscribe(
+  //     data => {
+  //       this.config = data;
+  //     },
+  //     err => {
+  //       this.getDefaultConfig();
+  //       console.log(err);
+  //     },
+  //     () => {
+  //       this.setVariables(this.config);
+  //     }
+  //   );
+  // }
+
 
   setMetaTags() {
     this._meta.addTags([
