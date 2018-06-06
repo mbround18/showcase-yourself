@@ -25,7 +25,7 @@ deploy_prod:
     when: manual
     script:
         - cd ./dist
-        - aws s3 cp --recursive . s3://$AWS_BUCKET/personal-showcase
+        - aws s3 sync . s3://$AWS_BUCKET/personal-showcase --delete
     environment:
         name: production
         url: https://m.bruno.fyi
