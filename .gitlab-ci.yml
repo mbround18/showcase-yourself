@@ -1,0 +1,26 @@
+stages:
+    - build
+    - deploy
+  
+build:
+    image: node:latest
+    cache:
+      paths:
+      - node_modules/
+    script:
+        - yarn install
+        - yarn build
+
+## Deployment - Production
+deploy_production:
+    image: napp/docker-aws-cli
+    stage: deploy
+    when: manual
+    script:
+        - cd ./dist
+        - aws s3 cp --recursive . s3://$AWS_BUCKET
+    environment:
+        name: production
+        url: https://m.bruno.fyi
+    only:
+        - master
