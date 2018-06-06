@@ -14,15 +14,20 @@ build:
     cache:
         paths:
             - node_modules/
+    artifacts:
+        untracked: true
     script:
         - yarn install
         - yarn build
+ 
 
 ## Deployment - Production
 deploy_prod:
     image: napp/docker-aws-cli
     stage: deploy
     when: manual
+    dependencies: 
+        - build
     script:
         - cd ./dist
         - aws s3 sync . s3://$AWS_BUCKET/personal-showcase --delete
