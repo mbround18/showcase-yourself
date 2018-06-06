@@ -6,7 +6,7 @@
 
 stages:
     - build
-    - deploy_production
+    - deploy_prod
   
 build:
     image: node:latest
@@ -18,7 +18,7 @@ build:
         - yarn build
 
 ## Deployment - Production
-deploy_production:
+deploy_prod:
     image: napp/docker-aws-cli
     stage: deploy
     when: manual
