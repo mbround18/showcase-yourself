@@ -1,12 +1,18 @@
+# Gitlab CI configuration for deploying your app to AWS S3 bucket. 
+# Next you will need to setup Amazon CodeDeploy to listen to changes in your bucket and deploy the zip file.
+# 
+# You will have to setup 4 variables in your Gitlab setup for the AWS SDK to pick you your AMI credentials
+# AWS_ACCESS_KEY_ID, AWS_BUCKET, AWS_REGION, AWS_SECRET_ACCESS_KEY
+
 stages:
     - build
-    - deploy
+    - deploy_production
   
 build:
     image: node:latest
     cache:
-      paths:
-      - node_modules/
+        paths:
+            - node_modules/
     script:
         - yarn install
         - yarn build
