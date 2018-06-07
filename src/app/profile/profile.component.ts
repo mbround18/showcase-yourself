@@ -8,8 +8,8 @@ import {ConfigData} from '../config-data';
 })
 export class ProfileComponent implements OnInit {
   @Input() name: string;
-  @Input() profile_data: ConfigData.Profile;
-  show_profile_img_loading = true;
+  @Input() profileData: ConfigData.Profile;
+  showProfileImgLoading = true;
 
   constructor() {
   }

@@ -7,9 +7,9 @@ import {ConfigData} from '../config-data';
   styleUrls: ['./links.component.css']
 })
 export class LinksComponent implements OnInit {
-  @Input() discord_data: ConfigData.Discord;
-  @Input() linked_in_data: ConfigData.LinkedIn;
-  @Input() github_data: ConfigData.Github;
+  @Input() discordData: ConfigData.Discord;
+  @Input() linkedInData: ConfigData.LinkedIn;
+  @Input() githubData: ConfigData.Github;
 
 
   constructor() { }
