@@ -13,10 +13,10 @@ export class AppComponent implements OnInit {
 
 
   public config;
-  public profile_data;
-  public discord_data;
-  public github_data;
-  public linked_in_data;
+  public profileData;
+  public discordData;
+  public githubData;
+  public linkedInData;
   private get_config;
 
   constructor(private _configService: ConfigService, private _meta: Meta, private _title: Title) {
@@ -30,10 +30,10 @@ export class AppComponent implements OnInit {
 
 
   setVariables(config: ConfigData.Base) {
-    this.profile_data = config.profile;
-    this.discord_data = config.discord;
-    this.github_data = config.github;
-    this.linked_in_data = config.linked_in;
+    this.profileData = config.profile;
+    this.discordData = config.discord;
+    this.githubData = config.github;
+    this.linkedInData = config.linked_in;
     this.setMetaTags();
     this._title.setTitle(this.config.name);
   }
@@ -82,8 +82,8 @@ export class AppComponent implements OnInit {
   setMetaTags() {
     this._meta.addTags([
       {property: 'og:title', content: this.config.name},
-      {property: 'og:description', content: this.profile_data.tag_line},
-      {property: 'og:image', content: this.profile_data.profile_pic_url},
+      {property: 'og:description', content: this.profileData.tag_line},
+      {property: 'og:image', content: this.profileData.profile_pic_url},
       {property: 'og:url', content: `${window.location.hostname}${window.location.pathname}`}
     ]);
   }
