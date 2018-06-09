@@ -19,7 +19,26 @@ build:
     script:
         - yarn install
         - yarn build
- 
+
+## Deployment - Develop 
+deploy_prod:
+    image: napp/docker-aws-cli
+    stage: deploy
+    when: manual
+    dependencies: 
+        - build
+    script:
+        - cd ./dist
+        - aws s3 sync . s3://$AWS_BUCKET/ --delete
+    environment:
+        name: production
+        url: https://dev-m.bruno.fyi
+    only:
+        - develop
+    variables:
+        AWS_BUCKET: "dev-m.bruno.fyi"
+
+
 
 ## Deployment - Production
 deploy_prod:
