@@ -56,4 +56,4 @@ deploy_prod:
     only:
         - master
     variables:
-        AWS_BUCKET: "dev-m.bruno.fyi"
+        AWS_BUCKET: "mbruno-static-files"
