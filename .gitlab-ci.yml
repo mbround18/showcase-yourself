@@ -31,7 +31,7 @@ deploy_dev:
         - cd ./dist
         - aws s3 sync . s3://$AWS_BUCKET/ --delete
     environment:
-        name: production
+        name: develop
         url: https://dev-m.bruno.fyi
     only:
         - develop
@@ -55,3 +55,5 @@ deploy_prod:
         url: https://m.bruno.fyi
     only:
         - master
+    variables:
+        AWS_BUCKET: "mbruno-static-files"
