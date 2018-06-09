@@ -21,7 +21,7 @@ build:
         - yarn build
 
 ## Deployment - Develop 
-deploy_prod:
+deploy_dev:
     image: napp/docker-aws-cli
     stage: deploy
     when: manual
