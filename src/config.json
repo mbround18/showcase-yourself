@@ -2,7 +2,7 @@
   "name": "Michael Bruno",
   "profile": {
     "profile_pic_url": "https://cloud.gamerdrop.zone/s/SFJ2oKpnbzedgqg/preview",
-    "tag_line": "Happily at my new job! and new college!",
+    "tag_line": "Highly technical QA automation engineer at Nike! :D",
     "actively_looking": false,
     "looking_for": [
       "Software Developer",
@@ -13,12 +13,18 @@
     "skills": [
       "Ruby",
       "Selenium",
-      "Angular 5",
+      "Angular 6",
       "SQL",
       "SaltStack",
       "HTML/HAML",
       "CSS",
-      "JavaScript"
+      "JavaScript",
+      "TypeScript",
+      "Nightwatch.js",
+      "Protractor",
+      "Kubernetes",
+      "Docker",
+      "Chef"
     ]
   },
   "linked_in": {
@@ -34,6 +40,6 @@
   "discord": {
     "active": true,
     "username": "",
-    "url": "https://discord.boop.ninja"
+    "url": "https://discord.gg/N3hKcpS"
   }
 }
