@@ -22,7 +22,7 @@
     "@angular/platform-browser-dynamic": "6.0.4",
     "@angular/router": "6.0.4",
     "core-js": "^2.5.7",
-    "jquery": "^3.3.1",
+    "jquery": "^3.4.0",
     "particles.js": "^2.0.0",
     "rxjs": "^6.2.0",
     "uikit": "^3.0.0-beta.42",
