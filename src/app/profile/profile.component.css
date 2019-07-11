@@ -1,13 +1,13 @@
 /*@media only screen and (max-width: 479px) {*/
-  /*!*#links-desktop-view {*!*/
-    /*!*display: none !important;*!*/
-  /*!*}*!*/
-  /*img {*/
-    /*width: auto;*/
-    /*height: auto;*/
-    /*!*position:absolute;*!*/
-    /*!*overflow: visible;*!*/
-  /*}*/
+/*!*#links-desktop-view {*!*/
+/*!*display: none !important;*!*/
+/*!*}*!*/
+/*img {*/
+/*width: auto;*/
+/*height: auto;*/
+/*!*position:absolute;*!*/
+/*!*overflow: visible;*!*/
+/*}*/
 /*}*/
 
 @media only screen and (min-width: 480px) {

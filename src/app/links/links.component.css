@@ -4,17 +4,21 @@ img {
 }
 
 @media only screen and (max-width: 479px) {
-  #links-desktop-view{ display: none !important; }
+  #links-desktop-view {
+    display: none !important;
+  }
   img {
-    width:  auto;
+    width: auto;
     height: 5em;
     overflow: visible;
   }
 }
 @media only screen and (min-width: 480px) {
-  #links-mobile-view{ display: none !important; }
+  #links-mobile-view {
+    display: none !important;
+  }
   img {
-    width:  auto;
+    width: auto;
     height: 9em;
     overflow: visible;
   }

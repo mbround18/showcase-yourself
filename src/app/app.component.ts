@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ConfigService} from './config.service';
-import {Meta, Title} from '@angular/platform-browser';
+import { Component, OnInit } from '@angular/core';
+import { ConfigService } from './config.service';
+import { Meta, Title } from '@angular/platform-browser';
 import * as $ from 'jquery';
-import {ConfigData} from './config-data';
+import { ConfigData } from './config-data';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,6 @@ import {ConfigData} from './config-data';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-
-
   public config;
   public profileData;
   public discordData;
@@ -19,15 +17,16 @@ export class AppComponent implements OnInit {
   public linkedInData;
   private get_config;
 
-  constructor(private _configService: ConfigService, private _meta: Meta, private _title: Title) {
-
-  }
+  constructor(
+    private _configService: ConfigService,
+    private _meta: Meta,
+    private _title: Title
+  ) {}
 
   ngOnInit() {
     $('#requires_js_enabled').remove();
     this.getConfig();
   }
-
 
   setVariables(config: ConfigData.Base) {
     this.profileData = config.profile;
@@ -37,7 +36,6 @@ export class AppComponent implements OnInit {
     this.setMetaTags();
     this._title.setTitle(this.config.name);
   }
-
 
   getConfig() {
     this._configService.getDefaultConfig().subscribe(
@@ -78,15 +76,15 @@ export class AppComponent implements OnInit {
   //   );
   // }
 
-
   setMetaTags() {
     this._meta.addTags([
-      {property: 'og:title', content: this.config.name},
-      {property: 'og:description', content: this.profileData.tag_line},
-      {property: 'og:image', content: this.profileData.profile_pic_url},
-      {property: 'og:url', content: `${window.location.hostname}${window.location.pathname}`}
+      { property: 'og:title', content: this.config.name },
+      { property: 'og:description', content: this.profileData.tag_line },
+      { property: 'og:image', content: this.profileData.profile_pic_url },
+      {
+        property: 'og:url',
+        content: `${window.location.hostname}${window.location.pathname}`
+      }
     ]);
   }
-
-
 }

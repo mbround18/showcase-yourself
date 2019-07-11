@@ -13,7 +13,7 @@
     "skills": [
       "Ruby",
       "Selenium",
-      "Angular 6",
+      "Angular",
       "SQL",
       "SaltStack",
       "HTML/HAML",
@@ -21,10 +21,12 @@
       "JavaScript",
       "TypeScript",
       "Nightwatch.js",
+      "Testcafe",
+      "React",
+      "Terraform",
       "Protractor",
       "Kubernetes",
-      "Docker",
-      "Chef"
+      "Docker"
     ]
   },
   "linked_in": {

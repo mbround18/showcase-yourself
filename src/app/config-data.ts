@@ -1,6 +1,4 @@
 export namespace ConfigData {
-
-
   export interface Profile {
     profile_pic_url: string;
     tag_line: string;
@@ -27,7 +25,6 @@ export namespace ConfigData {
     url: string;
   }
 
-
   export interface Base {
     name: string;
     profile: Profile;
@@ -35,6 +32,4 @@ export namespace ConfigData {
     github: Github;
     linked_in: LinkedIn;
   }
-
 }
-

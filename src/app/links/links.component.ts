@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ConfigData} from '../config-data';
+import { Component, Input, OnInit } from '@angular/core';
+import { ConfigData } from '../config-data';
 
 @Component({
   selector: 'app-links',
@@ -11,10 +11,7 @@ export class LinksComponent implements OnInit {
   @Input() linkedInData: ConfigData.LinkedIn;
   @Input() githubData: ConfigData.Github;
 
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

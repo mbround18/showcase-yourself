@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ConfigData} from '../config-data';
+import { Component, Input, OnInit } from '@angular/core';
+import { ConfigData } from '../config-data';
 
 @Component({
   selector: 'app-profile',
@@ -11,10 +11,7 @@ export class ProfileComponent implements OnInit {
   @Input() profileData: ConfigData.Profile;
   showProfileImgLoading = true;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
