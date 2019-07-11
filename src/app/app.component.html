@@ -2,7 +2,7 @@
   <ng-container *ngIf="config; else elseTemplate">
     <app-profile [name]="config.name" [profileData]="profileData"></app-profile>
     <app-links [links]="links"></app-links>
-    <app-contact></app-contact>
+
   </ng-container>
   <ng-template #elseTemplate
     ><span
