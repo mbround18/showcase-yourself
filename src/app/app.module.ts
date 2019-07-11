@@ -6,10 +6,12 @@ import { LinksComponent } from './links/links.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ConfigService } from './config.service';
 import { HttpClientModule } from '@angular/common/http';
+import { MatomoModule } from 'ngx-matomo';
+import { LinkComponent } from './links/link/link.component';
 
 @NgModule({
-  declarations: [AppComponent, LinksComponent, ProfileComponent],
-  imports: [BrowserModule, HttpClientModule],
+  declarations: [AppComponent, LinksComponent, ProfileComponent, LinkComponent],
+  imports: [BrowserModule, HttpClientModule, MatomoModule],
   providers: [ConfigService],
   bootstrap: [AppComponent]
 })

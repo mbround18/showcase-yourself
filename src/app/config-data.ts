@@ -7,29 +7,16 @@ export namespace ConfigData {
     skills: string[];
   }
 
-  export interface Discord {
+  export interface LinkData {
     active: boolean;
     username: string;
     url: string;
-  }
-
-  export interface Github {
-    active: boolean;
-    username: string;
-    url: string;
-  }
-
-  export interface LinkedIn {
-    active: boolean;
-    username: string;
-    url: string;
+    logo?: string;
   }
 
   export interface Base {
     name: string;
     profile: Profile;
-    discord: Discord;
-    github: Github;
-    linked_in: LinkedIn;
+    links: LinkData[];
   }
 }

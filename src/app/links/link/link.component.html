@@ -1,0 +1,8 @@
+<div *ngIf="linkData.active">
+  <a [href]="linkData.url"
+    ><img
+      [class]="'uk-responsive-width uk-responsive-height' + ' icon-' + iconName"
+      [src]="'/assets/img/' + iconName + '/' + iconName + '.png'"
+      [alt]="linkData.username"
+  /></a>
+</div>

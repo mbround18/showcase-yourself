@@ -2,7 +2,8 @@
   "name": "Michael Bruno",
   "profile": {
     "profile_pic_url": "https://cloud.gamerdrop.zone/s/SFJ2oKpnbzedgqg/preview",
-    "tag_line": "Highly technical QA automation engineer at Nike! :D",
+    "tag_line": "React Frontend Engineer & Senior Automation Engineer at Nike! :D",
+    "summary": "",
     "actively_looking": false,
     "looking_for": [
       "Software Developer",
@@ -29,19 +30,24 @@
       "Docker"
     ]
   },
-  "linked_in": {
-    "active": true,
-    "username": "michael-bruno-89a89666",
-    "url": "https://www.linkedin.com/in/michael-bruno-89a89666/"
-  },
-  "github": {
-    "active": true,
-    "username": "mbround18",
-    "url": "https://github.com/mbround18"
-  },
-  "discord": {
-    "active": true,
-    "username": "",
-    "url": "https://discord.gg/N3hKcpS"
-  }
+  "links": [
+    {
+      "active": true,
+      "username": "michael-bruno-89a89666",
+      "url": "https://www.linkedin.com/in/michael-bruno-89a89666/",
+      "logo": "LinkedIn"
+    },
+    {
+      "active": true,
+      "username": "mbround18",
+      "url": "https://github.com/mbround18",
+      "logo": "GitHub"
+    },
+    {
+      "active": true,
+      "username": "MB Round 18",
+      "url": "https://discord.gg/N3hKcpS",
+      "logo": "Discord"
+    }
+  ]
 }
