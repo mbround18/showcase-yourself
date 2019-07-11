@@ -8,9 +8,10 @@ import { ConfigService } from './config.service';
 import { HttpClientModule } from '@angular/common/http';
 import { MatomoModule } from 'ngx-matomo';
 import { LinkComponent } from './links/link/link.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
-  declarations: [AppComponent, LinksComponent, ProfileComponent, LinkComponent],
+  declarations: [AppComponent, LinksComponent, ProfileComponent, LinkComponent, ContactComponent],
   imports: [BrowserModule, HttpClientModule, MatomoModule],
   providers: [ConfigService],
   bootstrap: [AppComponent]
