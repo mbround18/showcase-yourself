@@ -1,7 +1,7 @@
 export default {
   target: "static",
   env: {
-    baseUrl: process.env.BASE_URL || "http://localhost:3000",
+    configUrl: process.env.CONFIG_URL || "http://localhost:3000/config.json",
   },
   head: {
     script: [
