@@ -40,7 +40,9 @@ export default {
       links: [],
     };
     try {
-      const { data } = await axios.get(`${process.env.baseUrl}/config.json`);
+      console.debug("[Fetching Config]:", process.env.configUrl);
+      const { data } = await axios.get(`${process.env.configUrl}`);
+      console.debug("[Fetching Config]:", "Successful!");
       const {
         data: { avatar_url },
       } = await axios.get(`https://api.github.com/users/${data.github}`);
