@@ -1,8 +1,8 @@
 {
   "name": "Michael Bruno",
+  "github": "mbround18",
   "profile": {
-    "profile_pic_url": "https://cloud.gamerdrop.zone/s/SFJ2oKpnbzedgqg/preview",
-    "tag_line": "React Frontend Engineer & Senior Automation Engineer at Nike! :D",
+    "tag_line": "Currently Practicing my DevOps skills!",
     "summary": "",
     "actively_looking": false,
     "looking_for": [
@@ -17,8 +17,8 @@
       "Angular",
       "SQL",
       "SaltStack",
-      "HTML/HAML",
-      "CSS",
+      "HTML/HAML/Pug",
+      "CSS/Sass/Scss",
       "JavaScript",
       "TypeScript",
       "Nightwatch.js",
@@ -27,7 +27,8 @@
       "Terraform",
       "Protractor",
       "Kubernetes",
-      "Docker"
+      "Docker",
+      "Ansible"
     ]
   },
   "links": [
@@ -42,12 +43,6 @@
       "username": "mbround18",
       "url": "https://github.com/mbround18",
       "logo": "GitHub"
-    },
-    {
-      "active": true,
-      "username": "MB Round 18",
-      "url": "https://discord.gg/N3hKcpS",
-      "logo": "Discord"
     }
   ]
 }
