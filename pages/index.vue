@@ -1,7 +1,7 @@
 <template>
   <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m uk-align-center">
     <div class="uk-card-media-top uk-align-center">
-      <img class="pure-img" :data-src="avatar_url" alt="Profile Picture" srcset uk-img />
+      <img class="profile-img" :data-src="avatar_url" alt="Profile Picture" srcset uk-img />
     </div>
 
     <h1 class="uk-card-title">{{name}}</h1>
