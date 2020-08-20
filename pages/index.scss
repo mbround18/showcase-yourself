@@ -1,0 +1,40 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #202020;
+}
+
+.uk-card {
+  background-color: #3a3a3a;
+  h1.uk-card-title {
+    color: magenta;
+    font-family: monaco, Consolas, Lucida Console, monospace;
+    font-weight: bold;
+  }
+  h2,
+  p,
+  span {
+    color: white;
+  }
+}
+
+div.social-icon {
+  display: inline-block;
+  img {
+    width: 4em;
+    height: auto;
+  }
+}
+
+body {
+  // background-color: darkslategray;
+  line-height: 1.7em;
+  font-size: 13px;
+  h1 {
+    text-transform: capitalize;
+  }
+}
