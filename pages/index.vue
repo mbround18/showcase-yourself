@@ -10,9 +10,9 @@
       <h2 class="pb-3 italic">{{ profile.tag_line }}</h2>
     </div>
     
-    <div id="job-search" class="p-1">
+    <div id="job-search" class="p-1" v-if="profile.actively_looking">
       <strong>Looking for:</strong>
-      <p class="p-1" v-if="profile.actively_looking">{{ profile.looking_for.join(", ") }}</p>
+      <p class="p-1">{{ profile.looking_for.join(", ") }}</p>
     </div>
     
     <div id="skillset" class="p-1">
