@@ -10,8 +10,9 @@ export default Vue.extend({
         linkedin: require("../assets/linkedin.png"),
         github: require("../assets/github.png"),
         discord: require("../assets/discord.png"),
+        gitlab: require("../assets/gitlab.png")
       };
-      return get(images, name.toLowerCase(), "github");
+      return get(images, name.toLowerCase(), require("../assets/generic.svg"));
     },
     async loadConfig() {
       const { data } = await axios.get(`${process.env.configUrl}`);

@@ -21,7 +21,7 @@
     </div>
     
     <div id="social-icons" class="flex p-1 sm:items-end md:items-center width-max justify-center">
-      <div class="social-icon pl-1 pr-1" v-for="link in links" v-bind:key="link.username">
+      <div class="social-icon pl-1 pr-1" v-for="link in links" v-bind:key="encodeURIComponent(link.username + link.url)">
         <a target="_blank" :href="link.url">
           <img
             :src="loadImage(link.logo)"
