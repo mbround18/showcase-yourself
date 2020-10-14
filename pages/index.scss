@@ -1,3 +1,7 @@
+@import "~tailwindcss/base";
+@import "~tailwindcss/components";
+@import "~tailwindcss/utilities";
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -5,23 +9,38 @@
 }
 
 html {
+  font-size: large;
   background-color: #202020;
+  body {
+    #__layout {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    // background-color: darkslategray;
+    line-height: 1.7em;
+    font-size: 13px;
+    h1 {
+      text-transform: capitalize;
+    }
+  }
 }
 
 .profile-img {
+  padding: 2rem 2rem 2rem 2rem;
   border-radius: 1em;
 }
 
-.uk-card {
+.profile-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
   background-color: #3a3a3a;
-  h1.uk-card-title {
+  h1.full-name {
     color: magenta;
     font-family: monaco, Consolas, Lucida Console, monospace;
     font-weight: bold;
   }
-  h2,
-  p,
-  span {
+  * {
     color: white;
   }
 }
@@ -31,14 +50,5 @@ div.social-icon {
   img {
     width: 4em;
     height: auto;
-  }
-}
-
-body {
-  // background-color: darkslategray;
-  line-height: 1.7em;
-  font-size: 13px;
-  h1 {
-    text-transform: capitalize;
   }
 }
