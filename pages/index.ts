@@ -2,21 +2,20 @@ import Vue from 'vue';
 import axios from 'axios';
 import component from 'vue-class-component';
 import {merge, uniq, get} from 'lodash';
-import Logo from '../components/logo.vue';
-import {logos} from '~/utils/logos';
-import Footer from '../components/footer.vue';
+import {loading} from "~/utils/logos";
 
 @component({
 	components: {
-		Logo,
-		Footer
+		Logo: () => import('../components/logo.vue'),
+		Footer: () => import('../components/footer.vue'),
+		Portrait: () => import('../components/portrait.vue')
 	}
 })
 export default class Index extends Vue {
 	isLoading = true;
 	name = 'Loading...';
 	github = 'octocat';
-	avatar_url = null;
+	profileUrl = null;
 	profile = {
 		tag_line: 'Away @ Cannon Beach',
 		summary: '',
@@ -34,7 +33,7 @@ export default class Index extends Vue {
 		}
 	];
 
-	loadingImg = logos.loading;
+	loadingImg = loading;
 
 	mounted() {
 		console.debug('[Index]: Loaded...');
@@ -66,8 +65,8 @@ export default class Index extends Vue {
 
 	async fetchAvatarUrl() {
 		const githubApiUrl = `https://api.github.com/users/${this.github}`;
-		const {data: {avatar_url}} = await axios.get(githubApiUrl);
-		this.avatar_url = avatar_url;
+		const {data: {avatar_url: profileUrl }} = await axios.get(githubApiUrl);
+		this.profileUrl = profileUrl;
 	}
 }
 

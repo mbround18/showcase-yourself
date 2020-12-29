@@ -1,8 +1,7 @@
-export const logos = {
-	loading: require('~/assets/loader.gif'),
-	linkedin: require('~/assets/linkedin.png'),
-	github: require('~/assets/github.png'),
-	discord: require('~/assets/discord.png'),
-	gitlab: require('~/assets/gitlab.png'),
-	generic: require('~/assets/generic.svg')
-};
+export const loading = require('~/assets/loader.gif');
+export const linkedin = require('~/assets/linkedin.png');
+export const github = require('~/assets/github.png');
+export const discord = require('~/assets/discord.png');
+export const gitlab = require('~/assets/gitlab.png');
+export const generic = require('~/assets/generic.svg');
+

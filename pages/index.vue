@@ -2,19 +2,7 @@
 	<div
 		class="profile-card sm:w-auto md:w-4/5 lg:w-1/3 "
 	>
-		<div class="uk-card-media-top uk-align-center">
-			<div v-if="avatar_url">
-				<img class="profile-img" :src="avatar_url" alt="Profile Picture" />
-			</div>
-			<div v-else>
-				<img
-					class="profile-img"
-					style="filter: invert(1)"
-					:src="loadingImg"
-					alt="Loading Profile"
-				/>
-			</div>
-		</div>
+    <Portrait v-bind:profileUrl="profileUrl"></Portrait>
 		<div id="headings" class="p-1">
 			<h1 class="font-bold full-name">
 				{{ name }}

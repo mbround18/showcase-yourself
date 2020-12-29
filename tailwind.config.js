@@ -849,6 +849,7 @@ module.exports = {
 		zIndex: ['responsive', 'focus-within', 'focus']
 	},
 	plugins: [],
+	purge: false,
 	future: {
 		removeDeprecatedGapUtilities: true,
 		purgeLayersByDefault: true,

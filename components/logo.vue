@@ -13,14 +13,14 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { logos } from "~/utils/logos";
+import * as logos from "~/utils/logos";
 import { get } from "lodash";
 
 @Component
 export default class Logo extends Vue {
-  @Prop(String) readonly username: string | undefined;
-  @Prop(String) readonly logo: string | undefined;
-  @Prop(String) readonly url: string | undefined;
+  @Prop(String) readonly username!: string;
+  @Prop(String) readonly logo!: string;
+  @Prop(String) readonly url!: string;
 
   loadingImageSrc = logos.loading;
   imageSrc: any = null;
