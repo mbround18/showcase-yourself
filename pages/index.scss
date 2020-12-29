@@ -46,9 +46,26 @@ html {
 }
 
 div.social-icon {
+  @apply rounded-sm;
+  opacity: 80;
+
+  &:hover {
+    filter: invert(0.1);
+  }
+
+  background-color: #4c4c4f;
+  border: none;
+  color: white;
+  padding: 10px 32px;
+  text-align: center;
+  text-decoration: none;
   display: inline-block;
+
+  margin: 1em 5em;
+
   img {
     width: 4em;
     height: auto;
+    box-shadow: #3a3a3a;
   }
 }
