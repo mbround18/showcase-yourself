@@ -10,6 +10,14 @@
     "start": "nuxt start",
     "lint": "xo --fix"
   },
+  "xo": {
+    "space": 2,
+    "prettier": true,
+    "rules": {
+      "@typescript-eslint/no-var-requires": 0,
+      "import/extensions": 0
+    }
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "lodash": "^4.17.20",
@@ -33,7 +41,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-vue": "^7.4.0",
-    "parcel": "next",
+    "husky": "^4.3.6",
     "postcss": "^8.2.1",
     "postcss-loader": "^4.1.0",
     "postcss-responsive-type": "^1.0.0",
@@ -41,6 +49,14 @@
     "ts-loader": "^8.0.5",
     "ts-node": "~9.1.1",
     "typescript": "^4.0.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.11.1",
     "xo": "^0.36.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn generate"
+    }
   }
 }

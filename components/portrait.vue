@@ -17,8 +17,8 @@
 <script lang="ts">
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import {loading} from "~/utils/logos";
-import {Prop} from "vue-property-decorator";
+import loading from '~/assets/loader.gif'
+import { Prop } from "vue-property-decorator";
 
 // Define the component in class-style
 @Component

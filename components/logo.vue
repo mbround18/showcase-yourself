@@ -13,8 +13,8 @@
 import Vue from "vue";
 import Component from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import * as logos from "~/utils/logos";
-import { get } from "lodash";
+import loading from '~/assets/loader.gif';
+import { loadLogo } from "~/utils/logos";
 
 @Component
 export default class Logo extends Vue {
@@ -22,11 +22,15 @@ export default class Logo extends Vue {
   @Prop(String) readonly logo!: string;
   @Prop(String) readonly url!: string;
 
-  loadingImageSrc = logos.loading;
+  loadingImageSrc = loading;
   imageSrc: any = null;
 
+  async loadSelectedLogo() {
+    this.imageSrc = await loadLogo(this.logo);
+  }
+
   mounted() {
-    this.imageSrc = get(logos, this.logo?.toLowerCase());
+    this.loadSelectedLogo().then(() => console.log("loaded selected image"))
   }
 }
 </script>
