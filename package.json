@@ -23,7 +23,7 @@
     "lodash": "4.17.21",
     "node-sass": "5.0.0",
     "nuxt": "2.15.5",
-    "purecss": "2.0.3",
+    "purecss": "2.0.6",
     "tailwindcss": "2.0.2",
     "vue": "2.6.12",
     "vue-async-computed": "3.9.0",
