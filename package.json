@@ -22,7 +22,7 @@
     "axios": "0.21.1",
     "lodash": "4.17.21",
     "node-sass": "5.0.0",
-    "nuxt": "2.15.4",
+    "nuxt": "2.15.5",
     "purecss": "2.0.3",
     "tailwindcss": "2.0.2",
     "vue": "2.6.12",
@@ -31,7 +31,7 @@
     "vue-property-decorator": "9.1.2"
   },
   "devDependencies": {
-    "@nuxt/types": "2.15.4",
+    "@nuxt/types": "2.15.5",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxt/typescript-runtime": "2.0.0",
     "@typescript-eslint/eslint-plugin": "4.11.1",
