@@ -41,7 +41,7 @@
     "eslint-config-airbnb-base": "14.2.1",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-vue": "7.4.0",
-    "husky": "4.3.6",
+    "husky": "4.3.8",
     "postcss": "8.2.14",
     "postcss-loader": "4.1.0",
     "postcss-responsive-type": "1.0.0",
