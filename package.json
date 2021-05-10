@@ -42,7 +42,7 @@
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-vue": "7.9.0",
     "husky": "6.0.0",
-    "postcss": "8.2.14",
+    "postcss": "8.2.15",
     "postcss-loader": "5.2.0",
     "postcss-responsive-type": "1.0.0",
     "sass-loader": "11.1.0",
