@@ -19,12 +19,12 @@
     "nuxt": "^2.15.7",
     "purecss": "2.0.6",
     "tailwindcss": "2.2.4",
-    "vue": "2.6.12",
+    "vue": "2.6.14",
     "vue-async-computed": "3.9.0",
-    "vue-class-component": "^7.2.6",
+    "vue-class-component": "7.2.6",
     "vue-loader": "16.3.0",
     "vue-property-decorator": "9.1.2",
-    "vue-server-renderer": "^2.6.14"
+    "vue-server-renderer": "2.6.14"
   },
   "devDependencies": {
     "@nuxt/babel-preset-app": "^2.15.7",
@@ -33,7 +33,7 @@
     "@nuxt/typescript-runtime": "2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
-    "@vue/compiler-sfc": "^3.1.4",
+    "@vue/compiler-sfc": "3.1.4",
     "autoprefixer": "10.3.0",
     "ava": "3.15.0",
     "consola": "2.15.3",
@@ -67,7 +67,7 @@
     "ts-node": "10.1.0",
     "typescript": "4.3.5",
     "url-loader": "4.1.1",
-    "vue-template-compiler": "2.6.12",
+    "vue-template-compiler": "2.6.14",
     "webpack": "4.46.0",
     "xo": "0.40.3"
   },
