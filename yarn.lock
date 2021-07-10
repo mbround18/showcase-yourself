@@ -2611,7 +2611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.22.0, @typescript-eslint/eslint-plugin@npm:^4.28.2":
+"@typescript-eslint/eslint-plugin@npm:4.28.2, @typescript-eslint/eslint-plugin@npm:^4.22.0":
   version: 4.28.2
   resolution: "@typescript-eslint/eslint-plugin@npm:4.28.2"
   dependencies:
@@ -2648,7 +2648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.22.0, @typescript-eslint/parser@npm:^4.28.2":
+"@typescript-eslint/parser@npm:4.28.2, @typescript-eslint/parser@npm:^4.22.0":
   version: 4.28.2
   resolution: "@typescript-eslint/parser@npm:4.28.2"
   dependencies:
@@ -10688,8 +10688,8 @@ fsevents@~2.1.2:
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
     "@nuxtjs/composition-api": 0.24.6
-    "@typescript-eslint/eslint-plugin": ^4.28.2
-    "@typescript-eslint/parser": ^4.28.2
+    "@typescript-eslint/eslint-plugin": 4.28.2
+    "@typescript-eslint/parser": 4.28.2
     "@vue/compiler-sfc": ^3.1.4
     "@yarnpkg/pnpify": 3.0.0-rc.10
     autoprefixer: 10.3.0
