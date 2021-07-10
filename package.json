@@ -16,7 +16,7 @@
     "axios": "0.21.1",
     "lodash": "4.17.21",
     "node-sass": "6.0.1",
-    "nuxt": "^2.15.7",
+    "nuxt": "2.15.7",
     "purecss": "2.0.6",
     "tailwindcss": "2.2.4",
     "vue": "2.6.12",
@@ -27,8 +27,8 @@
     "vue-server-renderer": "^2.6.14"
   },
   "devDependencies": {
-    "@nuxt/babel-preset-app": "^2.15.7",
-    "@nuxt/types": "^2.15.7",
+    "@nuxt/babel-preset-app": "2.15.7",
+    "@nuxt/types": "2.15.7",
     "@nuxt/typescript-build": "^2.1.0",
     "@nuxt/typescript-runtime": "2.1.0",
     "@typescript-eslint/eslint-plugin": "^4.28.2",

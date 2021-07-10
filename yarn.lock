@@ -1537,7 +1537,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/babel-preset-app@npm:2.15.7, @nuxt/babel-preset-app@npm:^2.15.7":
+"@nuxt/babel-preset-app@npm:2.15.7":
   version: 2.15.7
   resolution: "@nuxt/babel-preset-app@npm:2.15.7"
   dependencies:
@@ -1788,7 +1788,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxt/types@npm:^2.15.7":
+"@nuxt/types@npm:2.15.7":
   version: 2.15.7
   resolution: "@nuxt/types@npm:2.15.7"
   dependencies:
@@ -10683,8 +10683,8 @@ fsevents@~2.1.2:
   version: 0.0.0-use.local
   resolution: "michael.bruno.fyi@workspace:."
   dependencies:
-    "@nuxt/babel-preset-app": ^2.15.7
-    "@nuxt/types": ^2.15.7
+    "@nuxt/babel-preset-app": 2.15.7
+    "@nuxt/types": 2.15.7
     "@nuxt/typescript-build": ^2.1.0
     "@nuxt/typescript-runtime": 2.1.0
     "@nuxtjs/composition-api": ^0.24.6
@@ -10716,7 +10716,7 @@ fsevents@~2.1.2:
     husky: ^7.0.1
     lodash: 4.17.21
     node-sass: 6.0.1
-    nuxt: ^2.15.7
+    nuxt: 2.15.7
     postcss: 8.3.5
     postcss-loader: ^4.2.0
     postcss-responsive-type: 1.0.0
@@ -11542,7 +11542,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"nuxt@npm:^2.15.7":
+"nuxt@npm:2.15.7":
   version: 2.15.7
   resolution: "nuxt@npm:2.15.7"
   dependencies:
