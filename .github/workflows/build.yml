@@ -91,6 +91,21 @@ jobs:
     needs: generate
     name: 'Deploy to Netlify'
     steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ./.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+            
       - uses: actions/download-artifact@v2
         with:
           name: generate-production
@@ -101,3 +116,4 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_TO_PROD: true
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
+          
