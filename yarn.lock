@@ -2648,7 +2648,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.0.0, @typescript-eslint/parser@npm:^4.22.0, @typescript-eslint/parser@npm:^4.28.2":
+"@typescript-eslint/parser@npm:^4.22.0, @typescript-eslint/parser@npm:^4.28.2":
   version: 4.28.2
   resolution: "@typescript-eslint/parser@npm:4.28.2"
   dependencies:
@@ -6793,35 +6793,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-standard-with-typescript@npm:^20.0.0":
-  version: 20.0.0
-  resolution: "eslint-config-standard-with-typescript@npm:20.0.0"
-  dependencies:
-    "@typescript-eslint/parser": ^4.0.0
-    eslint-config-standard: ^16.0.0
-  peerDependencies:
-    "@typescript-eslint/eslint-plugin": ">=4.0.1"
-    eslint: ">=7.12.1"
-    eslint-plugin-import: ">=2.22.1"
-    eslint-plugin-node: ">=11.1.0"
-    eslint-plugin-promise: ">=4.2.1"
-    typescript: ">=3.9"
-  checksum: d5f85efbb74f6ab09bd66ede24d6eea0bf3e54ec37dd3c8608fa66f78018faba1a16baa8e32c846ccd42de3282065c66384893c22e85948a415c0a226e3475fc
-  languageName: node
-  linkType: hard
-
-"eslint-config-standard@npm:^16.0.0":
-  version: 16.0.3
-  resolution: "eslint-config-standard@npm:16.0.3"
-  peerDependencies:
-    eslint: ^7.12.1
-    eslint-plugin-import: ^2.22.1
-    eslint-plugin-node: ^11.1.0
-    eslint-plugin-promise: ^4.2.1 || ^5.0.0
-  checksum: bac061664b12d830c1413005c109ecfe40a4fb89985295a4f2592b6c0649e65a75be2c096ef887d0ae8e904faef2bb79dd6ff6cef0976040c346faff34c2e5cb
-  languageName: node
-  linkType: hard
-
 "eslint-config-xo-typescript@npm:^0.41.0":
   version: 0.41.1
   resolution: "eslint-config-xo-typescript@npm:0.41.1"
@@ -10730,7 +10701,6 @@ fsevents@~2.1.2:
     eslint: 7.30.0
     eslint-config-airbnb-base: 14.2.1
     eslint-config-prettier: 7.2.0
-    eslint-config-standard-with-typescript: ^20.0.0
     eslint-config-xo-typescript: ^0.43.0
     eslint-import-resolver-node: ^0.3.4
     eslint-plugin-ava: ^12.0.0
