@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars  */
 export async function loadLogo(name: string) {
   // Switch (name.toLowerCase()) {
   //     case 'loading':

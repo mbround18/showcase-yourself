@@ -8,8 +8,8 @@ import loading from '~/assets/loader.gif';
   components: {
     Logo: async () => import('../components/logo.vue'),
     Footer: async () => import('../components/footer.vue'),
-    Portrait: async () => import('../components/portrait.vue')
-  }
+    Portrait: async () => import('../components/portrait.vue'),
+  },
 })
 export default class Index extends Vue {
   isLoading = true;
@@ -21,7 +21,7 @@ export default class Index extends Vue {
     summary: '',
     actively_looking: false,
     looking_for: [],
-    skills: []
+    skills: [],
   };
 
   links = [
@@ -29,16 +29,19 @@ export default class Index extends Vue {
       active: true,
       username: 'mbround18',
       url: 'https://github.com/mbround18',
-      logo: 'Github'
-    }
+      logo: 'Github',
+    },
   ];
 
+  /* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */
   loadingImg = loading;
 
   mounted() {
     console.debug('[Index]: Loaded...');
     this.loadConfig()
-      .then(() => console.log('[Index]: Config loaded...'))
+      .then(() => {
+        console.log('[Index]: Config loaded...');
+      })
       .catch(() => {
         this.name = 'Uhh ohhh, Config Failed to load!';
         this.profile.tag_line = 'Failed Loading config....';
@@ -66,7 +69,7 @@ export default class Index extends Vue {
   async fetchAvatarUrl() {
     const githubApiUrl = `https://api.github.com/users/${this.github}`;
     const {
-      data: {avatar_url: profileUrl}
+      data: {avatar_url: profileUrl},
     } = await axios.get(githubApiUrl);
     this.profileUrl = profileUrl;
   }
