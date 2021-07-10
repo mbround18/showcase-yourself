@@ -1,0 +1,35 @@
+{
+"space": 2,
+"prettier": true,
+"semicolon": true,
+"plugins": [
+"@typescript-eslint",
+"prettier"
+],
+"extends": [
+"plugin:@typescript-eslint/recommended"
+],
+"parserOptions": {
+"project": "./tsconfig.json",
+"ecmaVersion": 12,
+"sourceType": "module"
+},
+"rules": {
+"@typescript-eslint/no-var-requires": 0,
+"import/extensions": 0,
+"@typescript-eslint/indent": 0,
+"@typescript-eslint/no-unsafe-assignment": 1,
+"@typescript-eslint/no-unsafe-call": 1
+},
+"overrides": [
+{
+"files": "./*.(js|ts)",
+"rules": {
+"@typescript-eslint/no-unsafe-assignment": 0,
+"@typescript-eslint/no-unsafe-call": 0,
+"@typescript-eslint/no-explicit-any": 0,
+"@typescript-eslint/explicit-module-boundary-types": 0
+}
+}
+]
+}

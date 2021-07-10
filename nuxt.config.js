@@ -1,8 +1,9 @@
-const tailwindConfig = {
-  buildModules: ['@nuxt/typescript-build'],
+const config = {
+  buildModules: ['@nuxt/typescript-build', '@nuxtjs/composition-api/module'],
   target: 'static',
+  ssr: false,
   env: {
-    configUrl: process.env.CONFIG_URL || 'http://localhost:3000/config.json'
+    configUrl: process.env.CONFIG_URL || 'http://localhost:3000/config.json',
   },
   head: {
     meta: [
@@ -11,24 +12,24 @@ const tailwindConfig = {
       {
         hid: 'Personal Showcase',
         name: 'Personal Showcase',
-        content: 'A website to showcase skills and social media links.'
-      }
-    ]
+        content: 'A website to showcase skills and social media links.',
+      },
+    ],
   },
   build: {
     postcss: {
       // Add plugin names as key and arguments as value
       // Install them before as dependencies with npm or yarn
       plugins: {
-        tailwindcss: {}
+        tailwindcss: {},
       },
       preset: {
         features: {
           // Fixes: https://github.com/tailwindcss/tailwindcss/issues/1190#issuecomment-546621554
-          'focus-within-pseudo-class': false
-        }
-      }
-    }
+          'focus-within-pseudo-class': false,
+        },
+      },
+    },
   },
   render: {
     static: {
@@ -40,8 +41,8 @@ const tailwindConfig = {
           'Access-Control-Allow-Headers',
           'Origin, X-Requested-With, Content-Type, Accept'
         );
-      }
-    }
-  }
+      },
+    },
+  },
 };
-export default tailwindConfig;
+export default config;
