@@ -41,7 +41,7 @@
     "debug": "4.3.2",
     "eslint": "7.30.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-prettier": "7.2.0",
+    "eslint-config-prettier": "8.3.0",
     "eslint-config-xo-typescript": "0.43.0",
     "eslint-import-resolver-node": "0.3.4",
     "eslint-plugin-ava": "12.0.0",

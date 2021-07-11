@@ -6771,18 +6771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:7.2.0":
-  version: 7.2.0
-  resolution: "eslint-config-prettier@npm:7.2.0"
-  peerDependencies:
-    eslint: ">=7.0.0"
-  bin:
-    eslint-config-prettier: bin/cli.js
-  checksum: 6812150ea49703cd64035527205b4905bc1edcd34646e71f71665e1acff9ab4648f872598389bdb209964093ad73993830a2c821ba12642764a5293513b92a58
-  languageName: node
-  linkType: hard
-
-"eslint-config-prettier@npm:^8.2.0":
+"eslint-config-prettier@npm:8.3.0, eslint-config-prettier@npm:^8.2.0":
   version: 8.3.0
   resolution: "eslint-config-prettier@npm:8.3.0"
   peerDependencies:
@@ -10700,7 +10689,7 @@ fsevents@~2.1.2:
     debug: 4.3.2
     eslint: 7.30.0
     eslint-config-airbnb-base: 14.2.1
-    eslint-config-prettier: 7.2.0
+    eslint-config-prettier: 8.3.0
     eslint-config-xo-typescript: 0.43.0
     eslint-import-resolver-node: 0.3.4
     eslint-plugin-ava: 12.0.0
