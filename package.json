@@ -68,7 +68,7 @@
     "typescript": "4.3.5",
     "url-loader": "4.1.1",
     "vue-template-compiler": "2.6.12",
-    "webpack": "4.46.0",
+    "webpack": "5.44.0",
     "xo": "0.40.3"
   },
   "husky": {
