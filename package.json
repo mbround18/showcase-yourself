@@ -11,7 +11,7 @@
     "lint": "pretty-quick --staged && pnpify xo --fix"
   },
   "dependencies": {
-    "@nuxtjs/composition-api": "0.24.6",
+    "@nuxtjs/composition-api": "0.24.7",
     "@yarnpkg/pnpify": "3.0.0-rc.10",
     "axios": "0.21.1",
     "lodash": "4.17.21",

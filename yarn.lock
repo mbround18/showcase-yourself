@@ -1954,11 +1954,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nuxtjs/composition-api@npm:0.24.6":
-  version: 0.24.6
-  resolution: "@nuxtjs/composition-api@npm:0.24.6"
+"@nuxtjs/composition-api@npm:0.24.7":
+  version: 0.24.7
+  resolution: "@nuxtjs/composition-api@npm:0.24.7"
   dependencies:
-    "@vue/composition-api": 1.0.0-rc.13
+    "@vue/composition-api": 1.0.0-rc.14
     defu: ^5.0.0
     estree-walker: ^2.0.2
     fs-extra: ^9.1.0
@@ -1969,7 +1969,7 @@ __metadata:
     "@nuxt/vue-app": ^2.15
     nuxt: ^2.15
     vue: ^2
-  checksum: 60c5d789c76722763aa1f08212aef67e2ea1fe0e293e0c30fad5d24761fd4d7e5a05b170602c96bab92b47600249a7fb650a4e28c1e201437964598700790f87
+  checksum: 8231df5354993a9768993fbf67ed0e90981b092b354d6ff08b789eedd6a41908527fb739daa6f21c9ad6c6e44fa292fad6e6d180fa3e371251b93c6c57b98f5f
   languageName: node
   linkType: hard
 
@@ -2921,14 +2921,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vue/composition-api@npm:1.0.0-rc.13":
-  version: 1.0.0-rc.13
-  resolution: "@vue/composition-api@npm:1.0.0-rc.13"
+"@vue/composition-api@npm:1.0.0-rc.14":
+  version: 1.0.0-rc.14
+  resolution: "@vue/composition-api@npm:1.0.0-rc.14"
   dependencies:
     tslib: ^2.3.0
   peerDependencies:
     vue: ">= 2.5 < 3"
-  checksum: bf8f3d8bf40dd42ae0ca3a143ab6298be226f6051e3d3e1d3830e89cb8d76d6b14e53c95ab468fe7343c1ecc51b537de1ded2f6890011a29e89a8ac3f7383c74
+  checksum: 00ce1f128825cd794defaaff12e38390bfcf90b0361cbcb3db537d00b41bdccf08564c83d5f13051991de113008e5c5168295ddec60e08c035139b01f08d19ee
   languageName: node
   linkType: hard
 
@@ -10902,7 +10902,7 @@ fsevents@~2.1.2:
     "@nuxt/types": ^2.15.7
     "@nuxt/typescript-build": 2.1.0
     "@nuxt/typescript-runtime": 2.1.0
-    "@nuxtjs/composition-api": 0.24.6
+    "@nuxtjs/composition-api": 0.24.7
     "@typescript-eslint/eslint-plugin": 4.28.2
     "@typescript-eslint/parser": 4.28.2
     "@vue/compiler-sfc": ^3.1.4
