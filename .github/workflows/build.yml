@@ -15,8 +15,25 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
+      # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup
+      - uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: stable
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ./.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # BOILERPLATE - END
+
       - run: yarn install
       - run: yarn lint
 
@@ -24,8 +41,25 @@ jobs:
     runs-on: ubuntu-latest
     needs: lint
     steps:
+      # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup
+      - uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: stable
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ./.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # BOILERPLATE - END
+
       - run: yarn install
       - run: yarn build
 
@@ -33,8 +67,25 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup
+      - uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: stable
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ./.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # BOILERPLATE - END
+
       - run: yarn install
       - name: Generate Release
         env:
@@ -52,8 +103,25 @@ jobs:
     needs: generate
     name: 'Deploy to Netlify'
     steps:
+      # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/setup
+      - uses: hecrj/setup-rust-action@v1
+        with:
+          rust-version: stable
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '14'
+          cache: 'yarn'
+      - uses: actions/cache@v1
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: |
+            ./.yarn/cache
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+      # BOILERPLATE - END
+
       - uses: actions/download-artifact@v2
         with:
           name: generate-production
