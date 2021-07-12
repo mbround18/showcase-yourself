@@ -1,35 +1,22 @@
 name: Build
 
-on: 
+on:
   push:
-    branches: 
+    branches:
       - main
   pull_request:
-    branches: 
+    branches:
       - main
-    
-env: 
-  CONFIG_URL: https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw/showcase.json  
+
+env:
+  CONFIG_URL: https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw/showcase.json
 
 jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'yarn'
-
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      
+      - uses: .github/actions/setup
       - run: yarn install
       - run: yarn lint
 
@@ -38,20 +25,7 @@ jobs:
     needs: lint
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'yarn'
-
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      
+      - uses: .github/actions/setup
       - run: yarn install
       - run: yarn build
 
@@ -60,23 +34,10 @@ jobs:
     needs: build
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'yarn'
-
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      
+      - uses: .github/actions/setup
       - run: yarn install
       - name: Generate Release
-        env: 
+        env:
           NODE_ENV: production
         run: yarn generate
       - uses: actions/upload-artifact@v2
@@ -92,20 +53,7 @@ jobs:
     name: 'Deploy to Netlify'
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-          cache: 'yarn'
-
-      - uses: actions/cache@v1
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-            
+      - uses: .github/actions/setup
       - uses: actions/download-artifact@v2
         with:
           name: generate-production
@@ -118,4 +66,4 @@ jobs:
           NETLIFY_DEPLOY_MESSAGE: "Prod deploy v${{ github.ref }}"
           build_command: false
           build_directory: "./dist"
-          
+

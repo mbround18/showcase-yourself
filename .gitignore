@@ -225,3 +225,12 @@ modules.xml
 !.yarn/sdks
 !.yarn/versions
 .pnp.*
+
+
+/target
+/**/target
+/old
+/data
+/pkg
+/**/pkg
+.env**
