@@ -3979,9 +3979,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.3.0":
-  version: 10.3.0
-  resolution: "autoprefixer@npm:10.3.0"
+"autoprefixer@npm:10.3.1":
+  version: 10.3.1
+  resolution: "autoprefixer@npm:10.3.1"
   dependencies:
     browserslist: ^4.16.6
     caniuse-lite: ^1.0.30001243
@@ -3993,7 +3993,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: f733fb0487bf1dbb37e28becb47df4decdd056dad7094c672533a2a0550add58e179488263b05b12e39d8b59e5386ee827d50b90025f08e6af71e1dbc62e5fb6
+  checksum: f220c29c98fe740e27308e418f3e45978ceb209ff0d77276ca01e0ef15089e1936bc1746eac9309c92af15de1a4ace21926aad47a5355e2fa84ffdfabc7f7b0f
   languageName: node
   linkType: hard
 
@@ -10907,7 +10907,7 @@ fsevents@~2.1.2:
     "@typescript-eslint/parser": 4.28.2
     "@vue/compiler-sfc": ^3.1.4
     "@yarnpkg/pnpify": 3.0.0-rc.10
-    autoprefixer: 10.3.0
+    autoprefixer: 10.3.1
     ava: 3.15.0
     axios: 0.21.1
     consola: 2.15.3
