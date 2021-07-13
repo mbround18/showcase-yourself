@@ -7,6 +7,7 @@ const path = require('path');
 
 
 "https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw"
+// noinspection JSValidateTypes
 module.exports = {
   entry: './loader.js',
   mode: 'development',
