@@ -4,7 +4,10 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/mbround18/showcase-yourself/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mbround18/showcase-yourself?targetFile=package.json)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca22d859-17fc-4007-9250-74881b51811b/deploy-status)](https://app.netlify.com/sites/silly-edison-e92c70/deploys)
 
-Revamped in Nuxt.js and Vue! Simplicity is key!
+Revamping in Rust+Yew for WebAssembly! 
+
+<img width="25%" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F01%2F20%2F10%2F52%2Fmaintenance-1151312_960_720.png&f=1&nofb=1" />
+
 
 ## Setup
 
