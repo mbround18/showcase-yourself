@@ -32,7 +32,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: ./.github/actions/boilerplate
+      - uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn lint
@@ -58,7 +58,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: ./.github/actions/boilerplate
+      - uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn build
@@ -84,7 +84,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: ./.github/actions/boilerplate
+      - uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - name: Generate Release
@@ -120,7 +120,7 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-      - run: ./.github/actions/boilerplate
+      - uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - uses: actions/download-artifact@v2
