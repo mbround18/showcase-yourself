@@ -22,7 +22,9 @@ module.exports = {
     chunkFilename: 'static/js/[name].chunk.js',
   },
   plugins: [
-    new DotEnv(),
+    new DotEnv({
+      systemvars: true
+    }),
     new HtmlWebpackPlugin({
       title: 'Showcase Yourself',
       meta: {
