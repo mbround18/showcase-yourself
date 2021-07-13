@@ -46,12 +46,13 @@ impl Index {
                 let content = format!("{} is currently rebuilding this website!", c.github);
                 ConsoleService::log(&content);
                 let output = html! {
-                    <>
+                    <div class="p-2" >
                         <h1 class="p8">{ content }</h1>
                         <p> {
                             "This website is being rebuilt using WebAssembly through Rust+Yew <3"
                         }</p>
-                    </>
+                        <img class="pb-4" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F01%2F20%2F10%2F52%2Fmaintenance-1151312_960_720.png&f=1&nofb=1" />
+                    </div>
                 };
                 output
             }
