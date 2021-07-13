@@ -1,0 +1,9 @@
+name: Boilerplate
+description: Runs boilerplate commands
+runs:
+  using: composite
+  steps:
+    - run: yarn install
+      shell: bash
+    - run: yarn clean
+      shell: bash
