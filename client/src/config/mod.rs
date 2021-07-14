@@ -1,3 +1,5 @@
+pub mod github;
+
 use serde::{Serialize, Deserialize};
 
 #[derive(Serialize, Deserialize, Clone)]

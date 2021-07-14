@@ -2,11 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const DotEnv = require('dotenv-webpack');
 const path = require('path');
 
-
-"https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw"
 // noinspection JSValidateTypes
 module.exports = {
   entry: './loader.js',
@@ -37,7 +36,12 @@ module.exports = {
     new WasmPackPlugin({
       crateDirectory: path.resolve(__dirname, './client'),
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png')),
+    new CopyPlugin({
+      patterns: [
+        { from: "assets", to: "assets" }
+      ],
+    }),
+    new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png'))
   ],
   module: {
     rules: [

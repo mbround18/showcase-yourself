@@ -8,11 +8,13 @@
     "build": "webpack build",
     "generate": "webpack build --mode production",
     "lint": "pretty-quick --staged && cargo fmt && cargo clippy",
-    "clean": "rimraf \"./{**/{pkg,target,dist},target,dist,pkg}\""
+    "clean": "rimraf \"./{**/{pkg,target,dist},target,dist,pkg}\"",
+    "postinstall": "cargo check"
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "1.4.0",
     "autoprefixer": "10.3.1",
+    "copy-webpack-plugin": "^9.0.1",
     "css-loader": "5.2.7",
     "dotenv-webpack": "7.0.3",
     "favicons": "6.2.2",
