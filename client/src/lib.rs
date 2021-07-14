@@ -39,18 +39,25 @@ impl Index {
             }
         }, callback));
     }
-    fn render_message(&self) -> Html {
+    fn render_content(&self) -> Html {
         let config = &self.config;
         match config {
             Some(c) => {
+                use components::portrait::PortraitComponent;
                 let content = format!("{} is currently rebuilding this website!", c.github);
                 ConsoleService::log(&content);
+                let github = String::from(&c.github);
                 let output = html! {
                     <div class="p-2" >
+                        <PortraitComponent github=github />
                         <h1 class="p8">{ content }</h1>
-                        <p> {
-                            "This website is being rebuilt using WebAssembly through Rust+Yew <3"
+                        <p class="wrap"> {
+                            "This website is being rebuilt using WebAssembly through Rust+Yew <3
+                            Almost there with rebuilding, the data is present and now just need to get the looks right.
+                            For those of you who are tech savvy, you can inspect and see the new wasm files loaded! :)
+                            "
                         }</p>
+                        <a target="_blank" class="text-blue-700 underline" href="https://www.linkedin.com/in/michael-a-bruno/">{ "Click here for LinkedIn" }</a>
                         <img class="pb-4" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F01%2F20%2F10%2F52%2Fmaintenance-1151312_960_720.png&f=1&nofb=1" />
                     </div>
                 };
@@ -58,7 +65,10 @@ impl Index {
             }
             None => {
                 let output = html! {
-                    <p>{ "Shwifty" }</p>
+                    <div>
+                        <image src="assets/img/loading.gif" />
+                        <p>{ "Shwifty" }</p>
+                    </div>
                 };
                 output
             }
@@ -108,8 +118,7 @@ impl Component for Index {
                 <div
                     class="profile-card sm:w-auto md:w-4/5 lg:w-1/3 "
                 >
-                    <PortraitComponent src="https://avatars.githubusercontent.com/u/12646562?s=400&u=d3cc1541c96eba24a7c79101bb9c3b5ba71ece7b&v=4" />
-                    { self.render_message() }
+                    { self.render_content() }
 
                 </div>
                 { footer::render() }
