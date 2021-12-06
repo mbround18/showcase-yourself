@@ -8,7 +8,7 @@ edition = "2018"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-yew = "0.18"
+yew = "0.19"
 wasm-bindgen = "0.2.78"
 reqwest-wasm = { version = "0.11", features = ["json"] }
 serde = "1.0.130"
