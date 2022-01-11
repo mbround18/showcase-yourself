@@ -32,7 +32,7 @@
     "tailwindcss": "3.0.13",
     "webpack": "latest",
     "webpack-cli": "4.9.1",
-    "webpack-dev-server": "4.7.2",
+    "webpack-dev-server": "4.7.3",
     "webpack-manifest-plugin": "4.0.2"
   },
   "husky": {
