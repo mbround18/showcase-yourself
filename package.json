@@ -15,7 +15,7 @@
     "@wasm-tool/wasm-pack-plugin": "1.6.0",
     "autoprefixer": "10.4.2",
     "copy-webpack-plugin": "9.1.0",
-    "css-loader": "6.5.1",
+    "css-loader": "6.6.0",
     "dotenv-webpack": "7.1.0",
     "favicons": "6.2.2",
     "favicons-webpack-plugin": "5.0.2",
