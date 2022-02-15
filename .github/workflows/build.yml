@@ -12,6 +12,14 @@ env:
   CONFIG_URL: https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw/showcase.json
 
 jobs:
+  cancel-previous:
+    name: Cancel Previous
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
   lint:
     runs-on: ubuntu-latest
     steps:
