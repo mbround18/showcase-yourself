@@ -5,8 +5,8 @@ mod utils;
 use crate::config::{Config, MediaLink};
 use crate::utils::promise;
 use wasm_bindgen::prelude::*;
+use weblog::console_log;
 use yew::prelude::*;
-use yew::services::ConsoleService;
 
 pub enum IndexMsg {
     ConfigContent(Config),
@@ -19,9 +19,9 @@ pub struct IndexProps {
 
 #[derive(Clone)]
 pub struct Index {
+    #[allow(dead_code)]
     config_url: String,
     config: Option<Config>,
-    link: ComponentLink<Self>,
 }
 
 impl Index {
@@ -31,7 +31,7 @@ impl Index {
                 match reqwest_wasm::get(&url).await {
                     Ok(response) => {
                         let config = response.json::<Config>().await.unwrap();
-                        ConsoleService::log(&format!("Loading Profile: {}", &config.github));
+                        console_log!(&format!("Loading Profile: {}", &config.github));
                         config
                     }
                     Err(_) => Config::default(),
@@ -55,15 +55,13 @@ impl Index {
         let config = &self.config;
         match config {
             Some(c) => {
-                use components::portrait::PortraitComponent;
-                use components::profile::render as render_profile;
                 let github = String::from(&c.github);
                 let links = c.links.to_vec();
                 let profile = c.profile.to_owned();
                 let output = html! {
                     <div class="p-2 pb-4" >
-                        <PortraitComponent github=github />
-                        { render_profile(&profile) }
+                        <components::portrait::PortraitComponent {github} />
+                        { components::profile::render(&profile) }
                         <hr class="p-4" />
                         { self.render_links(links) }
                     </div>
@@ -87,37 +85,31 @@ impl Component for Index {
     type Message = IndexMsg;
     type Properties = IndexProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
+        let props = ctx.props();
+        let link = ctx.link();
         let url = String::from(&props.config_url);
         let boxed_link = Box::from(link.clone());
         let callback = boxed_link.callback(IndexMsg::ConfigContent);
         Index::load_config(url, callback);
         Self {
-            config_url: props.config_url,
+            config_url: String::from(&props.config_url),
             config: None,
-            link,
         }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         use IndexMsg::ConfigContent;
         match msg {
             ConfigContent(config) => {
-                ConsoleService::log("Update triggered, setting config");
+                console_log!("Update triggered, setting config");
                 self.config = Option::Some(config);
                 true
             }
         }
     }
 
-    fn change(&mut self, _props: Self::Properties) -> ShouldRender {
-        // Should only return "true" if new properties are different to
-        // previously received properties.
-        // This component has no properties so we will always return "false".
-        false
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         use components::footer;
         html! {
             <div class="w-full flex-col flex flex-center">
