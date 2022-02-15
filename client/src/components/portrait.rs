@@ -1,8 +1,7 @@
 use crate::config::github::GithubUser;
 use crate::utils::promise;
+use weblog::{console_error, console_log};
 use yew::prelude::*;
-use yew::services::ConsoleService;
-use yew::Properties;
 
 pub enum Msg {
     LoadedImage(String),
@@ -27,7 +26,7 @@ impl PortraitComponent {
         wasm_bindgen_futures::spawn_local(promise(
             async move {
                 let client = reqwest_wasm::Client::new();
-                ConsoleService::log(&format!("Fetching User from: {}", &url));
+                console_log!(&format!("Fetching User from: {}", &url));
                 match client
                     .get(&url)
                     .header("Accept", "application/vnd.github.v3+json")
@@ -36,14 +35,11 @@ impl PortraitComponent {
                 {
                     Ok(response) => {
                         let user = response.json::<GithubUser>().await.unwrap();
-                        ConsoleService::log(&format!(
-                            "Loading GitHub Avatar: {}",
-                            &user.avatar_url
-                        ));
+                        console_log!(&format!("Loading GitHub Avatar: {}", &user.avatar_url));
                         user.avatar_url
                     }
                     Err(err) => {
-                        ConsoleService::error(&err.to_string());
+                        console_error!(&err.to_string());
                         String::from("assets/img/loading.gif")
                     }
                 }
@@ -57,17 +53,18 @@ impl Component for PortraitComponent {
     type Message = Msg;
     type Properties = PortraitComponentProps;
 
-    fn create(props: Self::Properties, link: ComponentLink<Self>) -> Self {
+    fn create(ctx: &Context<Self>) -> Self {
+        let props = ctx.props();
         let url = format!(" https://api.github.com/users/{}", &props.github);
-        PortraitComponent::load_github_profile(url, link.callback(Msg::LoadedImage));
+        PortraitComponent::load_github_profile(url, ctx.link().callback(Msg::LoadedImage));
         Self {
             // link,
-            github: props.github,
+            github: props.github.clone(),
             src: String::from("assets/img/loader.gif"),
         }
     }
 
-    fn update(&mut self, msg: Self::Message) -> ShouldRender {
+    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::LoadedImage(image) => {
                 self.src = image;
@@ -76,27 +73,25 @@ impl Component for PortraitComponent {
         }
     }
 
-    fn change(&mut self, props: Self::Properties) -> ShouldRender {
-        if let Some(src) = props.src {
-            self.src = src
-        }
-
-        if self.github != props.github {
-            self.github = props.github;
-            true
-        } else {
-            false
-        }
-    }
-
-    fn view(&self) -> Html {
+    fn view(&self, _ctx: &Context<Self>) -> Html {
         let src = String::from(&self.src);
         html! {
             <div class="flex-col flex flex-center w-full">
                 <div>
-                    <img class="h-80 w-80 md:h-auto md:w-auto" src=src alt="Profile Picture" />
+                    <img class="h-80 w-80 md:h-auto md:w-auto" {src} alt="Profile Picture" />
                 </div>
             </div>
+        }
+    }
+
+    fn rendered(&mut self, ctx: &Context<Self>, _first_render: bool) {
+        let props = ctx.props();
+        if let Some(src) = &props.src {
+            self.src = src.clone()
+        }
+
+        if self.github != props.github {
+            self.github = String::from(&props.github);
         }
     }
 }
