@@ -3,6 +3,31 @@ description: Runs boilerplate commands
 runs:
   using: composite
   steps:
+    # Rust Setup
+    - name: Setup | Rust | Nightly
+      uses: ATiltedTree/setup-rust@v1
+      with:
+        rust-version: nightly
+        components: clippy rustfmt
+    - uses: actions/cache@v2
+      name: Cache Cargo Files
+      with:
+        path: |
+          target/release
+          target/debug
+        key: ${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+    # Node Setup
+    - uses: actions/setup-node@v2
+      with:
+        node-version: '16'
+        cache: 'yarn'
+    - uses: actions/cache@v2
+      with:
+        path: |
+          ./.yarn/cache
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
     - run: yarn install
       shell: bash
     - run: yarn clean

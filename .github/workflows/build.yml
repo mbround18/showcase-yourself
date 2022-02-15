@@ -12,27 +12,21 @@ env:
   CONFIG_URL: https://gist.githubusercontent.com/mbround18/d325e49f21e4d99a1ceea988458fc897/raw/showcase.json
 
 jobs:
+  cancel-previous:
+    name: Cancel Previous
+    runs-on: ubuntu-latest
+    steps:
+      - uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
+
   lint:
     runs-on: ubuntu-latest
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: hecrj/setup-rust-action@v1
-        with:
-          rust-version: stable
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn lint
@@ -43,22 +37,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: hecrj/setup-rust-action@v1
-        with:
-          rust-version: stable
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn build
@@ -69,22 +49,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: hecrj/setup-rust-action@v1
-        with:
-          rust-version: stable
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - name: Generate Release
@@ -105,22 +71,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: hecrj/setup-rust-action@v1
-        with:
-          rust-version: stable
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '16'
-          cache: 'yarn'
-      - uses: actions/cache@v2
-        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-        with:
-          path: |
-            ./.yarn/cache
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-yarn-
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - uses: actions/download-artifact@v2
