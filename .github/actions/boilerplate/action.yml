@@ -8,7 +8,7 @@ runs:
         rust-version: stable
     - uses: actions/setup-node@v2
       with:
-        node-version: '1'
+        node-version: '16'
         cache: 'yarn'
     - uses: actions/cache@v2
       # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
