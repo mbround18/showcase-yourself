@@ -3,16 +3,25 @@ description: Runs boilerplate commands
 runs:
   using: composite
   steps:
-    - uses: hecrj/setup-rust-action@v1
+    # Rust Setup
+    - name: Setup | Rust | Nightly
+      uses: ATiltedTree/setup-rust@v1
       with:
-        rust-version: stable
+        rust-version: nightly
+        components: clippy rustfmt
+    - uses: actions/cache@v2
+      name: Cache Cargo Files
+      with:
+        path: |
+          target/release
+          target/debug
+        key: ${{ runner.os }}-${{ hashFiles('**/Cargo.lock') }}
+    # Node Setup
     - uses: actions/setup-node@v2
       with:
         node-version: '16'
         cache: 'yarn'
     - uses: actions/cache@v2
-      # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
-      id: yarn-cache
       with:
         path: |
           ./.yarn/cache
