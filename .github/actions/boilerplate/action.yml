@@ -32,3 +32,4 @@ runs:
       shell: bash
     - run: yarn clean
       shell: bash
+    - run: yarn global add netlify-cli
