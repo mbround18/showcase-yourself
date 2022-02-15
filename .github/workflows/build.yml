@@ -17,7 +17,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn lint
@@ -28,7 +29,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - run: yarn build
@@ -39,7 +41,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - name: Generate Release
@@ -60,7 +63,8 @@ jobs:
     steps:
       # BOILERPLATE - BEGIN
       - uses: actions/checkout@v2
-      - uses: ./.github/actions/boilerplate
+      - name: Setup
+        uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
       - uses: actions/download-artifact@v2
