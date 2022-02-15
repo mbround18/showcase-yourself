@@ -6,9 +6,6 @@
 
 Revamping in Rust+Yew for WebAssembly! 
 
-<img width="25%" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2016%2F01%2F20%2F10%2F52%2Fmaintenance-1151312_960_720.png&f=1&nofb=1" />
-
-
 ## Setup
 
 1. Clone or fork+clone this repository.
