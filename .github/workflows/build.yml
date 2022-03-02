@@ -75,7 +75,7 @@ jobs:
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: generate-production
           path: dist/
