@@ -1273,9 +1273,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:10.4.3":
-  version: 10.4.3
-  resolution: "autoprefixer@npm:10.4.3"
+"autoprefixer@npm:10.4.4":
+  version: 10.4.4
+  resolution: "autoprefixer@npm:10.4.4"
   dependencies:
     browserslist: ^4.20.2
     caniuse-lite: ^1.0.30001317
@@ -1287,7 +1287,7 @@ __metadata:
     postcss: ^8.1.0
   bin:
     autoprefixer: bin/autoprefixer
-  checksum: 8a168792bafa5a8d760b235a183565b091fe0501fbf5923889431673c9f373ca430b9a96d279bae7c3a78be1526660d0c26ca7ae551f01fa3473aa782ad24dd6
+  checksum: bd42e23d71af0228b6b0b27d0d0b33c95e67562e55eb4ca0e221cf795a06482c90d565d6544a5f4090d8e303b09b200845fa2bcaaa707d1e8777974250dffe1f
   languageName: node
   linkType: hard
 
@@ -4185,7 +4185,7 @@ fsevents@~2.3.2:
   resolution: "michael.bruno.fyi@workspace:."
   dependencies:
     "@wasm-tool/wasm-pack-plugin": 1.6.0
-    autoprefixer: 10.4.3
+    autoprefixer: 10.4.4
     copy-webpack-plugin: 9.1.0
     css-loader: 6.7.1
     dotenv-webpack: 7.1.0
