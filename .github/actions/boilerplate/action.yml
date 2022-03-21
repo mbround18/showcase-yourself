@@ -9,7 +9,7 @@ runs:
       with:
         rust-version: nightly
         components: clippy rustfmt
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       name: Cache Cargo Files
       with:
         path: |
@@ -21,7 +21,7 @@ runs:
       with:
         node-version: '16'
         cache: 'yarn'
-    - uses: actions/cache@v2
+    - uses: actions/cache@v3
       with:
         path: |
           ./.yarn/cache
