@@ -4009,7 +4009,7 @@ fsevents@~2.3.2:
     favicons-webpack-plugin: 5.0.2
     html-webpack-plugin: 5.5.0
     husky: 7.0.4
-    postcss: 8.4.12
+    postcss: 8.4.13
     postcss-loader: 6.2.1
     prettier: 2.6.2
     pretty-quick: 3.1.3
@@ -4312,6 +4312,15 @@ fsevents@~2.3.2:
   bin:
     nanoid: bin/nanoid.cjs
   checksum: 4ef0969e1bbe866fc223eb32276cbccb0961900bfe79104fa5abe34361979dead8d0e061410a5c03bc3d47455685adf32c09d6f27790f4a6898fb51f7df7ec86
+  languageName: node
+  linkType: hard
+
+"nanoid@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "nanoid@npm:3.3.3"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: ada019402a07464a694553c61d2dca8a4353645a7d92f2830f0d487fedff403678a0bee5323a46522752b2eab95a0bc3da98b6cccaa7c0c55cd9975130e6d6f0
   languageName: node
   linkType: hard
 
@@ -4974,7 +4983,18 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss@npm:8.4.12, postcss@npm:^8.4.12":
+"postcss@npm:8.4.13":
+  version: 8.4.13
+  resolution: "postcss@npm:8.4.13"
+  dependencies:
+    nanoid: ^3.3.3
+    picocolors: ^1.0.0
+    source-map-js: ^1.0.2
+  checksum: 514fb3552805a5d039a2d6b4df3e73f657001716ca93c0d57e6067b0473abdea70276d80afc96005c9aaff82ed5d98062bd97724d3f47ca400fba0b5e9e436ed
+  languageName: node
+  linkType: hard
+
+"postcss@npm:^8.4.12":
   version: 8.4.12
   resolution: "postcss@npm:8.4.12"
   dependencies:
