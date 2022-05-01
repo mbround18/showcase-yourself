@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "@wasm-tool/wasm-pack-plugin": "1.6.0",
-    "autoprefixer": "10.4.5",
+    "autoprefixer": "10.4.6",
     "copy-webpack-plugin": "9.1.0",
     "css-loader": "6.7.1",
     "dotenv-webpack": "7.1.0",
