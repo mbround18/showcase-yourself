@@ -20,7 +20,7 @@
     "favicons": "6.2.2",
     "favicons-webpack-plugin": "5.0.2",
     "html-webpack-plugin": "5.5.0",
-    "husky": "8.0.0",
+    "husky": "8.0.1",
     "postcss": "8.4.13",
     "postcss-loader": "6.2.1",
     "prettier": "2.6.2",
