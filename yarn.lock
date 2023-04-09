@@ -1977,14 +1977,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons@npm:7.1.1":
-  version: 7.1.1
-  resolution: "favicons@npm:7.1.1"
+"favicons@npm:7.1.2":
+  version: 7.1.2
+  resolution: "favicons@npm:7.1.2"
   dependencies:
     escape-html: ^1.0.3
-    sharp: ^0.31.1
-    xml2js: ^0.4.23
-  checksum: 8003334e262376f1f7fd9aace34d17b450d2fb86ad2437077f627a5d860a1d6f1f73f7b08b8f10e46c52ca1082bece724d0effaf8881a9dcbb90e9151fbe852e
+    sharp: ^0.32.0
+    xml2js: ^0.5.0
+  checksum: 44eb965f5e8cd30e20654430918895f2448b5679b43458c80591e89214dc87d4b49e11c1a38fbb1ef6ad3623032cc86db0844b91139ba97ac3cee916494ec137
   languageName: node
   linkType: hard
 
@@ -3020,7 +3020,7 @@ __metadata:
     copy-webpack-plugin: 11.0.0
     css-loader: 6.7.3
     dotenv-webpack: 8.0.1
-    favicons: 7.1.1
+    favicons: 7.1.2
     favicons-webpack-plugin: 6.0.0
     html-webpack-plugin: 5.5.0
     husky: 8.0.3
@@ -3336,12 +3336,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-addon-api@npm:^5.0.0":
-  version: 5.1.0
-  resolution: "node-addon-api@npm:5.1.0"
+"node-addon-api@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "node-addon-api@npm:6.0.0"
   dependencies:
     node-gyp: latest
-  checksum: 2508bd2d2981945406243a7bd31362fc7af8b70b8b4d65f869c61731800058fb818cc2fd36c8eac714ddd0e568cc85becf5e165cebbdf7b5024d5151bbc75ea1
+  checksum: a34a901b9f0d6d201a173e12ed378033e4e0f27f77fd27c225dc7e6f96e88a88e94bd78b2b0404fc95deee20a137f1cbfc92738cbfba38862ed9b6c2e61c1ab2
   languageName: node
   linkType: hard
 
@@ -4419,20 +4419,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sharp@npm:^0.31.1":
-  version: 0.31.3
-  resolution: "sharp@npm:0.31.3"
+"sharp@npm:^0.32.0":
+  version: 0.32.0
+  resolution: "sharp@npm:0.32.0"
   dependencies:
     color: ^4.2.3
     detect-libc: ^2.0.1
-    node-addon-api: ^5.0.0
+    node-addon-api: ^6.0.0
     node-gyp: latest
     prebuild-install: ^7.1.1
     semver: ^7.3.8
     simple-get: ^4.0.1
     tar-fs: ^2.1.1
     tunnel-agent: ^0.6.0
-  checksum: 29fd1dfbc616c6389f53f366cec342b4353d9f2a37e98952ca273db38dca57dfa0f336322d6d763f0fae876042ead22fd86ffe26d70c32ade2458d421db60d04
+  checksum: 82c6046038f45f1fdeb732cff8be6a8a3fb5eb25f46f4c3ecb4b71363c2c387b52de8c0c5c4674f2400663e467b8a7b93dbc5d70b3f0e145cb45fc27d39c5709
   languageName: node
   linkType: hard
 
@@ -5277,13 +5277,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"xml2js@npm:^0.4.23":
-  version: 0.4.23
-  resolution: "xml2js@npm:0.4.23"
+"xml2js@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "xml2js@npm:0.5.0"
   dependencies:
     sax: ">=0.6.0"
     xmlbuilder: ~11.0.0
-  checksum: ca0cf2dfbf6deeaae878a891c8fbc0db6fd04398087084edf143cdc83d0509ad0fe199b890f62f39c4415cf60268a27a6aed0d343f0658f8779bd7add690fa98
+  checksum: 1aa71d62e5bc2d89138e3929b9ea46459157727759cbc62ef99484b778641c0cd21fb637696c052d901a22f82d092a3e740a16b4ce218e81ac59b933535124ea
   languageName: node
   linkType: hard
 
