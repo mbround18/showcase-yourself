@@ -19,7 +19,7 @@
     "dotenv-webpack": "8.0.1",
     "favicons": "7.1.2",
     "favicons-webpack-plugin": "6.0.0",
-    "html-webpack-plugin": "5.5.0",
+    "html-webpack-plugin": "5.5.1",
     "husky": "8.0.3",
     "postcss": "8.4.21",
     "postcss-loader": "7.2.4",
