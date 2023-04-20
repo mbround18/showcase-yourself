@@ -370,15 +370,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@wasm-tool/wasm-pack-plugin@npm:1.6.0":
-  version: 1.6.0
-  resolution: "@wasm-tool/wasm-pack-plugin@npm:1.6.0"
+"@wasm-tool/wasm-pack-plugin@npm:1.7.0":
+  version: 1.7.0
+  resolution: "@wasm-tool/wasm-pack-plugin@npm:1.7.0"
   dependencies:
     chalk: ^2.4.1
     command-exists: ^1.2.7
     watchpack: ^2.1.1
     which: ^2.0.2
-  checksum: ae2af8507a83b2994630a1393832ede09ecf86b1986e2506f4ad8c8908875e8b9e40d3fff97b2fbca1835eaf6cbe5a69611643d613dea961b1279122db60a0ec
+  checksum: b0a09f70827b262c4b4689296aae712cc7d9fb742e32eb7e7b720a5b45be1d256864c84c37c8f97de4c762cdae9c35be4a37cdea6832281056921edf4944aea4
   languageName: node
   linkType: hard
 
@@ -3037,7 +3037,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "michael.bruno.fyi@workspace:."
   dependencies:
-    "@wasm-tool/wasm-pack-plugin": 1.6.0
+    "@wasm-tool/wasm-pack-plugin": 1.7.0
     autoprefixer: 10.4.14
     copy-webpack-plugin: 11.0.0
     css-loader: 6.7.3
