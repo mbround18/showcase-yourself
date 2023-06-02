@@ -2032,14 +2032,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons@npm:7.1.2":
-  version: 7.1.2
-  resolution: "favicons@npm:7.1.2"
+"favicons@npm:7.1.3":
+  version: 7.1.3
+  resolution: "favicons@npm:7.1.3"
   dependencies:
     escape-html: ^1.0.3
     sharp: ^0.32.0
     xml2js: ^0.5.0
-  checksum: 44eb965f5e8cd30e20654430918895f2448b5679b43458c80591e89214dc87d4b49e11c1a38fbb1ef6ad3623032cc86db0844b91139ba97ac3cee916494ec137
+  checksum: ff298d15363673e182911e74afdba075f662885ddc3c83215e0026dd75b781c54522e8359efa533be3a6a875dd22150a3c41642306345747a11c1b80a383c81b
   languageName: node
   linkType: hard
 
@@ -3132,7 +3132,7 @@ __metadata:
     copy-webpack-plugin: 11.0.0
     css-loader: 6.8.1
     dotenv-webpack: 8.0.1
-    favicons: 7.1.2
+    favicons: 7.1.3
     favicons-webpack-plugin: 6.0.0
     html-webpack-plugin: 5.5.1
     husky: 8.0.3
