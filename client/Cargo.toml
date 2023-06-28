@@ -8,7 +8,7 @@ edition = "2021"
 crate-type = ["cdylib", "rlib"]
 
 [dependencies]
-yew = "0.19"
+yew = "0.20"
 wasm-bindgen = "0.2"
 reqwest-wasm = { version = "0.11", features = ["json"] }
 serde = "1.0"
