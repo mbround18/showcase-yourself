@@ -9,7 +9,7 @@ pub fn render(link: &MediaLink) -> Html {
     let alt = String::from(&link.logo);
 
     let link_html = html! {
-        <a class="flex w-full justify-center h-20" {href} target="_blank">
+        <a class="flex w-full justify-center h-20 pulse rounded-full object-contain m-2" {href} target="_blank">
             <img {src} {alt} />
         </a>
     };

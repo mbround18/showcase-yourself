@@ -1,6 +1,11 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+//@import "tailwindcss/base";
+//@import "tailwindcss/components";
+//@import "tailwindcss/utilities";
+@import "buttons";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 * {
   -webkit-box-sizing: border-box;
