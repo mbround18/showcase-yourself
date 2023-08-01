@@ -1,0 +1,18 @@
+<html lang="en">
+    <head>
+        <link data-trunk rel="scss" href="css/index.scss"/>
+        <link data-trunk rel="rust" href="client/Cargo.toml"/>
+        <script data-trunk rel="inline" type="javascript">
+            import 'tailwindcss/tailwind.css';
+            import './css/index.scss';
+            import('./client/pkg').then((wasm) => {
+                console.log(wasm)
+                wasm.main(process.env.CONFIG_URL);
+            });
+
+            console.log("Loading: ", process.env.CONFIG_URL)
+
+        </script>
+        <title>Personal Showcase</title>
+    </head>
+</html>

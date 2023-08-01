@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css';
 import './css/index.scss';
-import('./pkg').then((wasm) => {
+import('./client/pkg').then((wasm) => {
+  console.log(wasm)
   wasm.main(process.env.CONFIG_URL);
 });
 

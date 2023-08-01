@@ -127,5 +127,5 @@ impl Component for Index {
 
 #[wasm_bindgen]
 pub fn main(config_url: String) {
-    yew::start_app_with_props::<Index>(IndexProps { config_url });
+    yew::Renderer::<Index>::with_props(IndexProps { config_url }).render();
 }
