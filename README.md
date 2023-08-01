@@ -4,7 +4,7 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/mbround18/showcase-yourself/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mbround18/showcase-yourself?targetFile=package.json)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/ca22d859-17fc-4007-9250-74881b51811b/deploy-status)](https://app.netlify.com/sites/silly-edison-e92c70/deploys)
 
-Revamping in Rust+Yew for WebAssembly! 
+Revamping in Rust+Yew for WebAssembly!
 
 ## Setup
 
@@ -13,7 +13,7 @@ Revamping in Rust+Yew for WebAssembly!
 3. Create a config file and either add it to a gist or host it somewhere. [Click here to see an example of the config file](https://gist.github.com/mbround18/d325e49f21e4d99a1ceea988458fc897)
 4. Set an env variable called `CONFIG_URL` to be your gist url or hosted config.json
 
-  > If you are using gist, you can use `https://gist.githubusercontent.com/{username}/{gist-hash}/raw/{file}`
+> If you are using gist, you can use `https://gist.githubusercontent.com/{username}/{gist-hash}/raw/{file}`
 
 5. Build the app `yarn generate`
 6. Publish your static files from `./dist`

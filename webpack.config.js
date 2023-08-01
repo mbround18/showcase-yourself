@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WasmPackPlugin = require('@wasm-tool/wasm-pack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-const CopyPlugin = require("copy-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 const DotEnv = require('dotenv-webpack');
 const path = require('path');
 
@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new DotEnv({
-      systemvars: true
+      systemvars: true,
     }),
     new HtmlWebpackPlugin({
       title: 'Showcase Yourself',
@@ -37,11 +37,9 @@ module.exports = {
       crateDirectory: path.resolve(__dirname, './client'),
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "assets", to: "assets" }
-      ],
+      patterns: [{ from: 'assets', to: 'assets' }],
     }),
-    new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png'))
+    new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png')),
   ],
   module: {
     rules: [

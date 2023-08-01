@@ -1,7 +1,7 @@
 //@import "tailwindcss/base";
 //@import "tailwindcss/components";
 //@import "tailwindcss/utilities";
-@import "buttons";
+@import 'buttons';
 
 @tailwind base;
 @tailwind components;
@@ -55,7 +55,6 @@ footer {
 }
 
 #skill-list {
-
   list-style: none;
 
   & li {
@@ -63,10 +62,10 @@ footer {
   }
 
   & li:after {
-    content: ", ";
+    content: ', ';
   }
 
   & li:last-child:after {
-    content: "";
+    content: '';
   }
 }
