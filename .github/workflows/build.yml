@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -32,7 +32,7 @@ jobs:
     needs: lint
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -44,7 +44,7 @@ jobs:
     needs: build
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -67,7 +67,7 @@ jobs:
     name: 'Deploy to Netlify'
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
