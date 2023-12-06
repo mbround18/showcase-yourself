@@ -2454,7 +2454,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:5.5.3, html-webpack-plugin@npm:^5.5.0":
+"html-webpack-plugin@npm:5.5.4":
+  version: 5.5.4
+  resolution: "html-webpack-plugin@npm:5.5.4"
+  dependencies:
+    "@types/html-minifier-terser": ^6.0.0
+    html-minifier-terser: ^6.0.2
+    lodash: ^4.17.21
+    pretty-error: ^4.0.0
+    tapable: ^2.0.0
+  peerDependencies:
+    webpack: ^5.20.0
+  checksum: b49befb73d67a3716fd0e6f7776b108d2b0b7050fb8221f05cd114cbae13c03150a13b7cdf5e76170be040ce7936a1cf76f7a4bfd9ebe1552b72d7889a74c374
+  languageName: node
+  linkType: hard
+
+"html-webpack-plugin@npm:^5.5.0":
   version: 5.5.3
   resolution: "html-webpack-plugin@npm:5.5.3"
   dependencies:
@@ -3128,7 +3143,7 @@ __metadata:
     dotenv-webpack: 8.0.1
     favicons: 7.1.4
     favicons-webpack-plugin: 6.0.1
-    html-webpack-plugin: 5.5.3
+    html-webpack-plugin: 5.5.4
     husky: 8.0.3
     postcss: 8.4.32
     postcss-loader: 7.3.3
