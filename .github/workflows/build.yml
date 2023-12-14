@@ -72,7 +72,7 @@ jobs:
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: generate-production
           path: dist/
