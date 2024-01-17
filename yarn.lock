@@ -500,13 +500,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/minimatch@npm:^3.0.3":
-  version: 3.0.5
-  resolution: "@types/minimatch@npm:3.0.5"
-  checksum: c41d136f67231c3131cf1d4ca0b06687f4a322918a3a5adddc87ce90ed9dbd175a3610adee36b106ae68c0b92c637c35e02b58c8a56c424f71d30993ea220b92
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:*":
   version: 20.4.5
   resolution: "@types/node@npm:20.4.5"
@@ -948,7 +941,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ansi-styles@npm:^4.0.0, ansi-styles@npm:^4.1.0":
+"ansi-styles@npm:^4.0.0":
   version: 4.3.0
   resolution: "ansi-styles@npm:4.3.0"
   dependencies:
@@ -1012,13 +1005,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"array-differ@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "array-differ@npm:3.0.0"
-  checksum: 117edd9df5c1530bd116c6e8eea891d4bd02850fd89b1b36e532b6540e47ca620a373b81feca1c62d1395d9ae601516ba538abe5e8172d41091da2c546b05fb7
-  languageName: node
-  linkType: hard
-
 "array-flatten@npm:1.1.1":
   version: 1.1.1
   resolution: "array-flatten@npm:1.1.1"
@@ -1030,20 +1016,6 @@ __metadata:
   version: 2.1.2
   resolution: "array-flatten@npm:2.1.2"
   checksum: e8988aac1fbfcdaae343d08c9a06a6fddd2c6141721eeeea45c3cf523bf4431d29a46602929455ed548c7a3e0769928cdc630405427297e7081bd118fdec9262
-  languageName: node
-  linkType: hard
-
-"array-union@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "array-union@npm:2.1.0"
-  checksum: 5bee12395cba82da674931df6d0fea23c4aa4660cb3b338ced9f828782a65caa232573e6bf3968f23e0c5eb301764a382cef2f128b170a9dc59de0e36c39f98d
-  languageName: node
-  linkType: hard
-
-"arrify@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "arrify@npm:2.0.1"
-  checksum: 067c4c1afd182806a82e4c1cb8acee16ab8b5284fbca1ce29408e6e91281c36bb5b612f6ddfbd40a0f7a7e0c75bf2696eb94c027f6e328d6e9c52465c98e4209
   languageName: node
   linkType: hard
 
@@ -1271,16 +1243,6 @@ __metadata:
     escape-string-regexp: ^1.0.5
     supports-color: ^5.3.0
   checksum: ec3661d38fe77f681200f878edbd9448821924e0f93a9cefc0e26a33b145f1027a2084bf19967160d11e1f03bfe4eaffcabf5493b89098b2782c3fe0b03d80c2
-  languageName: node
-  linkType: hard
-
-"chalk@npm:^4.1.2":
-  version: 4.1.2
-  resolution: "chalk@npm:4.1.2"
-  dependencies:
-    ansi-styles: ^4.1.0
-    supports-color: ^7.1.0
-  checksum: fe75c9d5c76a7a98d45495b91b2172fa3b7a09e0cc9370e5c8feb1c567b85c4288e2b3fded7cfdd7359ac28d6b3844feb8b82b8686842e93d23c827c417e83fc
   languageName: node
   linkType: hard
 
@@ -3262,7 +3224,7 @@ __metadata:
     postcss: 8.4.33
     postcss-loader: 8.0.0
     prettier: 3.2.3
-    pretty-quick: 3.2.1
+    pretty-quick: 3.3.1
     rimraf: 5.0.5
     sass: 1.69.7
     sass-loader: 14.0.0
@@ -3472,19 +3434,6 @@ __metadata:
   bin:
     multicast-dns: cli.js
   checksum: 00b8a57df152d4cd0297946320a94b7c3cdf75a46a2247f32f958a8927dea42958177f9b7fdae69fab2e4e033fb3416881af1f5e9055a3e1542888767139e2fb
-  languageName: node
-  linkType: hard
-
-"multimatch@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "multimatch@npm:5.0.0"
-  dependencies:
-    "@types/minimatch": ^3.0.3
-    array-differ: ^3.0.0
-    array-union: ^2.1.0
-    arrify: ^2.0.1
-    minimatch: ^3.0.4
-  checksum: 82c8030a53af965cab48da22f1b0f894ef99e16ee680dabdfbd38d2dfacc3c8208c475203d747afd9e26db44118ed0221d5a0d65268c864f06d6efc7ac6df812
   languageName: node
   linkType: hard
 
@@ -3880,6 +3829,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"picomatch@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "picomatch@npm:3.0.1"
+  checksum: b7fe18174bcc05bbf0ea09cc85623ae395676b3e6bc25636d4c20db79a948586237e429905453bf1ba385bc7a7aa5b56f1b351680e650d2b5c305ceb98dfc914
+  languageName: node
+  linkType: hard
+
 "pify@npm:^2.3.0":
   version: 2.3.0
   resolution: "pify@npm:2.3.0"
@@ -4072,22 +4028,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pretty-quick@npm:3.2.1":
-  version: 3.2.1
-  resolution: "pretty-quick@npm:3.2.1"
+"pretty-quick@npm:3.3.1":
+  version: 3.3.1
+  resolution: "pretty-quick@npm:3.3.1"
   dependencies:
-    chalk: ^4.1.2
     execa: ^4.1.0
     find-up: ^4.1.0
     ignore: ^5.3.0
     mri: ^1.2.0
-    multimatch: ^5.0.0
+    picocolors: ^1.0.0
+    picomatch: ^3.0.1
     tslib: ^2.6.2
   peerDependencies:
     prettier: ^2.0.0
   bin:
     pretty-quick: dist/cli.js
-  checksum: 95d727d69e15a6e1c78901f9f2bf6b23287f8a1099b43a7861f0bd67510945d8d875559fe13f3c9392e53ed5a26d0b5bcd164eec08c708e4be071320b029d5bc
+  checksum: ce6af6e0818916ec52b24bffa5f45b8623c0ab1e5d0855eb8e8d42a42e396be3ff8c400f7661097eed77d7638f4ad279cd86c6f5996384c7178c202c85f845ed
   languageName: node
   linkType: hard
 
@@ -4926,15 +4882,6 @@ __metadata:
   dependencies:
     has-flag: ^3.0.0
   checksum: 95f6f4ba5afdf92f495b5a912d4abee8dcba766ae719b975c56c084f5004845f6f5a5f7769f52d53f40e21952a6d87411bafe34af4a01e65f9926002e38e1dac
-  languageName: node
-  linkType: hard
-
-"supports-color@npm:^7.1.0":
-  version: 7.2.0
-  resolution: "supports-color@npm:7.2.0"
-  dependencies:
-    has-flag: ^4.0.0
-  checksum: 3dda818de06ebbe5b9653e07842d9479f3555ebc77e9a0280caf5a14fb877ffee9ed57007c3b78f5a6324b8dbeec648d9e97a24e2ed9fdb81ddc69ea07100f4a
   languageName: node
   linkType: hard
 
