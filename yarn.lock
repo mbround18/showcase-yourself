@@ -2689,12 +2689,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:9.0.7":
-  version: 9.0.7
-  resolution: "husky@npm:9.0.7"
+"husky@npm:9.0.9":
+  version: 9.0.9
+  resolution: "husky@npm:9.0.9"
   bin:
-    husky: bin.js
-  checksum: 42fc1b869a1f5778ba5088706e7280b28a725cc29abad42f8411c54e542890e5936020a8ba886996bde3e7c5573a5cbfd440a51817d0da7db14ce81e102267ed
+    husky: bin.mjs
+  checksum: d6dd56cd67cbf8aa4011260eb19aeed5a7004efecdc9706cc6635a92b53bb4aaf57eeb350e6e58791f3108f949c62a4b53ef6a0ad9eeafd2bd459a1aea905f2e
   languageName: node
   linkType: hard
 
@@ -3220,7 +3220,7 @@ __metadata:
     favicons: 7.1.5
     favicons-webpack-plugin: 6.0.1
     html-webpack-plugin: 5.6.0
-    husky: 9.0.7
+    husky: 9.0.9
     postcss: 8.4.33
     postcss-loader: 8.1.0
     prettier: 3.2.4
