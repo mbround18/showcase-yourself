@@ -2213,14 +2213,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons@npm:7.1.5":
-  version: 7.1.5
-  resolution: "favicons@npm:7.1.5"
+"favicons@npm:7.2.0":
+  version: 7.2.0
+  resolution: "favicons@npm:7.2.0"
   dependencies:
     escape-html: "npm:^1.0.3"
     sharp: "npm:^0.33.1"
     xml2js: "npm:^0.6.1"
-  checksum: 10c0/1ad267ebd02a5d48ac2f3f0f8f84785d3ea4e55ff96f02811d2519b7c9077b422e3308b7d13838bef67ebbeb36149868b793214e94ee794ad0b2384383d81e0c
+  checksum: 10c0/6aa6f847b15f37f9f50815513016e1f82969e2275ff3677331b354239bba6401018e5344aa17ac02ff034e5aefc0c35f784e0844ec833fb6ea58f653ff29b2cd
   languageName: node
   linkType: hard
 
@@ -3350,7 +3350,7 @@ __metadata:
     copy-webpack-plugin: "npm:12.0.2"
     css-loader: "npm:6.10.0"
     dotenv-webpack: "npm:8.0.1"
-    favicons: "npm:7.1.5"
+    favicons: "npm:7.2.0"
     favicons-webpack-plugin: "npm:6.0.1"
     html-webpack-plugin: "npm:5.6.0"
     husky: "npm:9.0.11"
