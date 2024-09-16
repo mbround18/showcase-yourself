@@ -41,8 +41,8 @@ module.exports = {
     }),
     new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png')),
     new CopyPlugin({
-      patterns: [{ from: "config.schema.json", to: "config.schema.json" }]
-    })
+      patterns: [{ from: 'config.schema.json', to: 'config.schema.json' }],
+    }),
   ],
   module: {
     rules: [

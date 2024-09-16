@@ -1,75 +1,60 @@
 {
-    "type": "object",
-    "properties": {
-        "name": {
-            "type": "string"
-        },
-        "github": {
-            "type": "string"
-        },
-        "profile": {
-            "type": "object",
-            "properties": {
-                "tag_line": {
-                    "type": "string"
-                },
-                "summary": {
-                    "type": "string"
-                },
-                "actively_looking": {
-                    "type": "boolean"
-                },
-                "looking_for": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                },
-                "skills": {
-                    "type": "array",
-                    "items": {
-                        "type": "string"
-                    }
-                }
-            },
-            "required": [
-                "tag_line",
-                "actively_looking",
-                "looking_for",
-                "skills"
-            ]
-        },
-        "links": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "active": {
-                        "type": "boolean"
-                    },
-                    "username": {
-                        "type": "string"
-                    },
-                    "url": {
-                        "type": "string"
-                    },
-                    "logo": {
-                        "type": "string"
-                    }
-                },
-                "required": [
-                    "active",
-                    "username",
-                    "url",
-                    "logo"
-                ]
-            }
-        }
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
     },
-    "required": [
-        "name",
-        "github",
-        "profile",
-        "links"
-    ]
+    "github": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "tag_line": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "actively_looking": {
+          "type": "boolean"
+        },
+        "looking_for": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["tag_line", "actively_looking", "looking_for", "skills"]
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "active": {
+            "type": "boolean"
+          },
+          "username": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          },
+          "logo": {
+            "type": "string"
+          }
+        },
+        "required": ["active", "username", "url", "logo"]
+      }
+    }
+  },
+  "required": ["name", "github", "profile", "links"]
 }
