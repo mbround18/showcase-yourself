@@ -10,7 +10,10 @@ pub fn render(profile: &Profile) -> Html {
             <div id="summary">
                 { if ! profile.summary.is_empty() {
                     html! {
-                        <p class="wrap">{ &profile.summary }</p>
+                        <>
+                            <h2 class="text-lg font-bold italic">{"Summary"}</h2>
+                            <p class="wrap">{ &profile.summary }</p>
+                        </>
                     }
                 }  else {
                     html! {}
@@ -21,9 +24,7 @@ pub fn render(profile: &Profile) -> Html {
                   html! {
                     <>
                         <label for="actively-looking" class="text-lg font-bold italic">{"Actively Looking!"}</label>
-                        <h3 id="actively-looking">{"Hey! I am actively looking for work!\
-                        If you think I fit what you are looking for, please reach out via LinkedIn!
-                        "}</h3>
+                        <h3 id="actively-looking">{"Hey! I am actively looking for work! If you think I fit what you are looking for, please reach out via LinkedIn!"}</h3>
                         <label for="looking-for" class="text-lg font-bold italic">{"Looking For"}</label>
                         <ul id="looking-for">
                             { profile.looking_for.iter().map(|position| {

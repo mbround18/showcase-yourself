@@ -5,8 +5,9 @@ mod utils;
 use crate::config::{Config, MediaLink};
 use crate::utils::promise;
 use wasm_bindgen::prelude::*;
-use weblog::console_log;
 use yew::prelude::*;
+
+use components::portrait::PortraitComponent;
 
 pub enum IndexMsg {
     ConfigContent(Config),
@@ -31,7 +32,6 @@ impl Index {
                 match reqwest_wasm::get(&url).await {
                     Ok(response) => {
                         let config = response.json::<Config>().await.unwrap();
-                        console_log!(&format!("Loading Profile: {}", &config.github));
                         config
                     }
                     Err(_) => Config::default(),
@@ -58,9 +58,10 @@ impl Index {
                 let github = String::from(&c.github);
                 let links = c.links.to_vec();
                 let profile = c.profile.to_owned();
+                let src: Option<&str> = None;
                 let output = html! {
                     <div class="p-2 pb-4" >
-                        <components::portrait::PortraitComponent {github} />
+                        <PortraitComponent {github} {src} />
                         { components::profile::render(&profile) }
                         <hr class="p-4" />
                         { self.render_links(links) }
@@ -102,7 +103,6 @@ impl Component for Index {
         use IndexMsg::ConfigContent;
         match msg {
             ConfigContent(config) => {
-                console_log!("Update triggered, setting config");
                 self.config = Option::Some(config);
                 true
             }
