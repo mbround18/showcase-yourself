@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -32,7 +32,7 @@ jobs:
     needs: lint
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -44,7 +44,7 @@ jobs:
     needs: build
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
@@ -54,7 +54,7 @@ jobs:
           NODE_ENV: production
         run: yarn generate
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: generate-production
           path: dist/
@@ -67,12 +67,12 @@ jobs:
     name: 'Deploy to Netlify'
     steps:
       # BOILERPLATE - BEGIN
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup
         uses: ./.github/actions/boilerplate
       # BOILERPLATE - END
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: generate-production
           path: dist/
