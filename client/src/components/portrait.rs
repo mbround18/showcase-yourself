@@ -20,7 +20,7 @@ pub fn portrait_component(props: &PortraitComponentProps) -> Html {
     {
         let github = props.github.clone();
         let src = src.clone();
-        yew::use_effect(move || {
+        yew::use_effect_with(github, move |github| {
             let url = format!("https://api.github.com/users/{}", github);
             let callback = Callback::from(move |image: String| {
                 src.set(image);
