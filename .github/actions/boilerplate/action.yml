@@ -7,8 +7,9 @@ runs:
     - name: Setup | Rust | Nightly
       uses: mbround18/gh-reusable/actions/setup-rust@main
       with:
-        rust-version: nightly
+        toolchain: nightly
         components: clippy rustfmt
+        target: wasm32-unknown-unknown
         crates: trunk
     - uses: actions/cache@v4
       name: Cache Cargo Files
@@ -20,8 +21,8 @@ runs:
     # Node Setup
     - uses: actions/setup-node@v4
       with:
-        node-version: '20'
-        cache: 'yarn'
+        node-version: "20"
+        cache: "yarn"
     - uses: actions/cache@v4
       with:
         path: |
