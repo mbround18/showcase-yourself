@@ -2004,9 +2004,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"favicons-webpack-plugin@npm:6.0.0":
-  version: 6.0.0
-  resolution: "favicons-webpack-plugin@npm:6.0.0"
+"favicons-webpack-plugin@npm:6.0.1":
+  version: 6.0.1
+  resolution: "favicons-webpack-plugin@npm:6.0.1"
   dependencies:
     find-root: "npm:^1.1.0"
     html-webpack-plugin: "npm:^5.5.0"
@@ -2018,7 +2018,7 @@ __metadata:
   dependenciesMeta:
     html-webpack-plugin:
       optional: true
-  checksum: 10/3f9b4d2212ce3e7bf936e1d2ed9763740d6f3d229af1f4bbea34d91ccbd69145f2513c9838fbc77edc18218c764d612dd747f56d55e2fec3f873f661b20c6853
+  checksum: 10/a4dc4a933086b9134aa1630cd91b7c54036910f4a40b7c307dff8627e4ffc5362ee7c030849891f193eca1f570b8eff8d31bb4120c8675cbab630696f241676a
   languageName: node
   linkType: hard
 
@@ -3126,7 +3126,7 @@ __metadata:
     css-loader: "npm:7"
     dotenv-webpack: "npm:8.0.1"
     favicons: "npm:7.1.4"
-    favicons-webpack-plugin: "npm:6.0.0"
+    favicons-webpack-plugin: "npm:6.0.1"
     html-webpack-plugin: "npm:5.5.3"
     husky: "npm:9"
     postcss: "npm:8.4.31"
