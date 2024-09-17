@@ -21,7 +21,7 @@
     "favicons-webpack-plugin": "6.0.0",
     "html-webpack-plugin": "5.5.3",
     "husky": "9",
-    "postcss": "8.4.27",
+    "postcss": "8.4.31",
     "postcss-loader": "8",
     "prettier": "3.0.0",
     "pretty-quick": "4",
