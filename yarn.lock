@@ -1638,14 +1638,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv-webpack@npm:8.0.1":
-  version: 8.0.1
-  resolution: "dotenv-webpack@npm:8.0.1"
+"dotenv-webpack@npm:8.1.0":
+  version: 8.1.0
+  resolution: "dotenv-webpack@npm:8.1.0"
   dependencies:
     dotenv-defaults: "npm:^2.0.2"
   peerDependencies:
     webpack: ^4 || ^5
-  checksum: 10/71b6aa321128b25a079fb5d6d7042c68720e1cda0fa39fe2475da84c1a0d2eb52e889295e2b020d6b08ef48e7e5a202669b96647b77c674cce3e76cc7f9aa23e
+  checksum: 10/74a46a48646cfbd18c1df9afec13bcff41feeff6662bcd734d4069774bd3ee8531f072c109579812841de7683be3edf06495b694c7e78a7653a270bd9106b0db
   languageName: node
   linkType: hard
 
@@ -3124,7 +3124,7 @@ __metadata:
     autoprefixer: "npm:10.4.20"
     copy-webpack-plugin: "npm:12"
     css-loader: "npm:7"
-    dotenv-webpack: "npm:8.0.1"
+    dotenv-webpack: "npm:8.1.0"
     favicons: "npm:7.1.4"
     favicons-webpack-plugin: "npm:6.0.1"
     html-webpack-plugin: "npm:5.5.3"
