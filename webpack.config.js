@@ -40,6 +40,9 @@ module.exports = {
       patterns: [{ from: 'assets', to: 'assets' }],
     }),
     new FaviconsWebpackPlugin(path.resolve(__dirname, 'assets/user.png')),
+    new CopyPlugin({
+      patterns: [{ from: 'config.schema.json', to: 'config.schema.json' }],
+    }),
   ],
   module: {
     rules: [
