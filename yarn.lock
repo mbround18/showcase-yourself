@@ -3134,7 +3134,7 @@ __metadata:
     prettier: "npm:3.0.0"
     pretty-quick: "npm:4"
     rimraf: "npm:6"
-    sass: "npm:1.64.2"
+    sass: "npm:1.78.0"
     sass-loader: "npm:16"
     style-loader: "npm:4"
     tailwindcss: "npm:3.3.3"
@@ -4385,16 +4385,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sass@npm:1.64.2":
-  version: 1.64.2
-  resolution: "sass@npm:1.64.2"
+"sass@npm:1.78.0":
+  version: 1.78.0
+  resolution: "sass@npm:1.78.0"
   dependencies:
     chokidar: "npm:>=3.0.0 <4.0.0"
     immutable: "npm:^4.0.0"
     source-map-js: "npm:>=0.6.2 <2.0.0"
   bin:
     sass: sass.js
-  checksum: 10/2c32f833501aac2e34727f80193c386ada310d51d7b8fec47ab0c1bcb5b96839c793bf7e26ff92f98fd28ad1316ba480e77cfd3d8f10ef37e52ea79450176ab1
+  checksum: 10/a180135addd9108d9a3549e111b2b442a97761bc429ef04374d57ef741d4343378e7092a6cba12e1f94e48b02d9b997cc79e737c0a2b834ad9204a761b14734d
   languageName: node
   linkType: hard
 
