@@ -5,10 +5,11 @@ runs:
   steps:
     # Rust Setup
     - name: Setup | Rust | Nightly
-      uses: ATiltedTree/setup-rust@v1
+      uses: mbround18/gh-reusable/actions/setup-rust@main
       with:
         rust-version: nightly
         components: clippy rustfmt
+        crates: trunk
     - uses: actions/cache@v4
       name: Cache Cargo Files
       with:
