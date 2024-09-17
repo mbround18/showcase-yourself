@@ -30,10 +30,7 @@ impl Index {
         wasm_bindgen_futures::spawn_local(promise(
             async move {
                 match reqwest_wasm::get(&url).await {
-                    Ok(response) => {
-                        let config = response.json::<Config>().await.unwrap();
-                        config
-                    }
+                    Ok(response) => response.json::<Config>().await.unwrap(),
                     Err(_) => Config::default(),
                 }
             },
