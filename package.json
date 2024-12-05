@@ -30,7 +30,7 @@
     "sass-loader": "16",
     "style-loader": "4",
     "tailwindcss": "3.4.15",
-    "webpack": "5.96.1",
+    "webpack": "5.97.1",
     "webpack-cli": "5.1.4",
     "webpack-dev-server": "5",
     "webpack-manifest-plugin": "5.0.0"
