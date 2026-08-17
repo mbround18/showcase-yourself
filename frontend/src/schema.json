@@ -1,0 +1,97 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Showcase Profile",
+  "description": "A schema for the data used in the showcase-yourself project.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "github_username": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "tag_line": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "actively_looking": {
+          "type": "boolean"
+        },
+        "location": {
+          "type": "string"
+        },
+        "blog": {
+          "type": "string"
+        }
+      },
+      "required": ["tag_line", "summary", "actively_looking", "location", "blog"]
+    },
+    "links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": ["name", "url"]
+      }
+    },
+    "skills": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pinned_repositories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/repository"
+      }
+    },
+    "top_repositories": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/repository"
+      }
+    }
+  },
+  "required": ["name", "github_username", "profile", "links", "skills", "pinned_repositories", "top_repositories"],
+  "definitions": {
+    "repository": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "stars": {
+          "type": "integer"
+        },
+        "forks": {
+          "type": "integer"
+        },
+        "language": {
+          "type": "string"
+        }
+      },
+      "required": ["name", "description", "url", "stars", "forks", "language"]
+    }
+  }
+}

@@ -235,3 +235,5 @@ modules.xml
 /pkg
 /**/pkg
 .env**
+compose.env
+.rtk/

@@ -1,0 +1,159 @@
+{
+  "name": "Michael Bruno",
+  "github_username": "mbround18",
+  "profile": {
+    "tag_line": "I like to keep learning! My goal is to study as much as possible and keep creating interesting things!",
+    "summary": "A dedicated software engineer with over 10 years of experience in site reliability engineering, cloud platform migration, and automation. I have a proven track record of reducing deployment times by 99%, saving $10k/month in cloud costs, and driving unit test coverage from 65% to 80%. I’m currently seeking challenging roles where I can leverage my expertise in Kubernetes, Azure, Rust, and CI/CD pipelines to deliver scalable, efficient solutions for teams and projects. My passion lies in optimizing processes and mentoring teams toward success.",
+    "actively_looking": false,
+    "location": "Portland, Oregon",
+    "blog": "https://m.bruno.fyi"
+  },
+  "links": [
+    {
+      "name": "LinkedIn",
+      "url": "https://links.boop.ninja/linkedin"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://links.boop.ninja/instagram"
+    },
+    {
+      "name": "GitHub",
+      "url": "https://links.boop.ninja/github"
+    },
+    {
+      "name": "GitLab",
+      "url": "https://links.boop.ninja/gitlab"
+    }
+  ],
+  "skills": [
+    "Rust",
+    "Cypress",
+    "Ruby",
+    "Selenium",
+    "Angular",
+    "SQL",
+    "SaltStack",
+    "HTML/HAML/Pug",
+    "CSS/Sass/Scss",
+    "JavaScript",
+    "TypeScript",
+    "Nightwatch.js",
+    "Testcafe",
+    "React",
+    "Terraform",
+    "Protractor",
+    "Kubernetes",
+    "Docker",
+    "Ansible",
+    "Python",
+    "C#",
+    "Helm",
+    "Flux",
+    "GCP",
+    "AWS",
+    "NodeJS",
+    "PostgreSQL",
+    "WebAssembly"
+  ],
+  "pinned_repositories": [
+    {
+      "name": "valheim-docker",
+      "description": "Valheim Docker powered by Odin. The Valheim dedicated gameserver manager which is designed with resiliency in mind by providing automatic updates, world backup support, and a user friendly cli interface. ",
+      "url": "https://github.com/mbround18/valheim-docker",
+      "stars": 836,
+      "forks": 90,
+      "language": "Rust"
+    },
+    {
+      "name": "showcase-yourself",
+      "description": "This is a very simple personal professional website to showcase yourself! :) See the website link for an example. The config.json in the src directory is just an example.",
+      "url": "https://github.com/mbround18/showcase-yourself",
+      "stars": 2,
+      "forks": 1,
+      "language": "JavaScript"
+    },
+    {
+      "name": "auto",
+      "description": "This is an action wrapping the auto binary for GitHub Action usage.",
+      "url": "https://github.com/mbround18/auto",
+      "stars": 3,
+      "forks": 2,
+      "language": "Shell"
+    },
+    {
+      "name": "palworld-docker",
+      "description": "🌟 Welcome to the ultimate Palworld Server Setup! 🌍 This GitHub repository is your go-to toolkit 🛠️ for launching a Palworld server in a snap using Docker! Choose from preset worlds like 'casual' 🏖️, 'normal' 🌆, or 'hard' 🌋, or dive deep into customization with flexible settings 🎛️.",
+      "url": "https://github.com/mbround18/palworld-docker",
+      "stars": 24,
+      "forks": 2,
+      "language": "Rust"
+    },
+    {
+      "name": "foundryvtt-docker",
+      "description": "A simple docker image for hosting FoundryVTT",
+      "url": "https://github.com/mbround18/foundryvtt-docker",
+      "stars": 26,
+      "forks": 4,
+      "language": "Rust"
+    },
+    {
+      "name": "enshrouded-docker",
+      "description": "🌟 Welcome to the ultimate enshrouded Server Setup! 🌍 This GitHub repository is your go-to toolkit 🛠️ for launching an enshrouded server in a snap using Docker!",
+      "url": "https://github.com/mbround18/enshrouded-docker",
+      "stars": 59,
+      "forks": 14,
+      "language": "Shell"
+    }
+  ],
+  "top_repositories": [
+    {
+      "name": "enshrouded-docker",
+      "description": "🌟 Welcome to the ultimate enshrouded Server Setup! 🌍 This GitHub repository is your go-to toolkit 🛠️ for launching an enshrouded server in a snap using Docker!",
+      "url": "https://api.github.com/repos/mbround18/enshrouded-docker",
+      "stars": 59,
+      "forks": 14,
+      "language": "Shell"
+    },
+    {
+      "name": "foundryvtt-docker",
+      "description": "A simple docker image for hosting FoundryVTT",
+      "url": "https://api.github.com/repos/mbround18/foundryvtt-docker",
+      "stars": 26,
+      "forks": 4,
+      "language": "Rust"
+    },
+    {
+      "name": "ark-manager-web",
+      "description": "This is a web UI utility for Ark Manager which is provided by ark-server-tools. Please review the readme below and check the issues tab before installing!!! If you need support please create an issue or tweet @MBRound18",
+      "url": "https://api.github.com/repos/mbround18/ark-manager-web",
+      "stars": 21,
+      "forks": 4,
+      "language": "Rust"
+    },
+    {
+      "name": "foundryvtt-discord-auth",
+      "description": "FoundryVTT Discord Authentication",
+      "url": "https://api.github.com/repos/mbround18/foundryvtt-discord-auth",
+      "stars": 7,
+      "forks": 2,
+      "language": "JavaScript"
+    },
+    {
+      "name": "hytale",
+      "description": "Hytale dedicated server container! Run your hytale docker via compose or helm!",
+      "url": "https://api.github.com/repos/mbround18/hytale",
+      "stars": 4,
+      "forks": 0,
+      "language": "Shell"
+    },
+    {
+      "name": "auto",
+      "description": "This is an action wrapping the auto binary for GitHub Action usage.",
+      "url": "https://api.github.com/repos/mbround18/auto",
+      "stars": 3,
+      "forks": 2,
+      "language": "Shell"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    networks:
+      - showcase
+  ingress:
+    build:
+      context: ./ingress
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - showcase
+  frontend-dev:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5174:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - showcase
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    command: /backend
+    env_file:
+      - compose.env
+    networks:
+      - showcase
+  backend-dev:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./backend:/app
+    env_file:
+      - compose.env
+    networks:
+      - showcase
+  mongo:
+    image: mongo:8.3
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - showcase
+
+networks:
+  showcase:
+
+volumes:
+  mongo-data:

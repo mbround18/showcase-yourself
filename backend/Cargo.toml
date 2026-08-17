@@ -1,0 +1,19 @@
+[package]
+name = "backend"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "backend"
+path = "src/main.rs"
+
+[dependencies]
+actix-csrf = "0.8.0"
+actix-governor = "0.10.0"
+actix-web = "4.14.1"
+dotenv = "0.15.0"
+mongodb = "3.8.0"
+rand = { version = "0.8", features = ["std_rng"] }
+serde = "1.0.229"
+tokio = { version = "1.53.1", features = ["full"] }
+tower = "0.5.3"
