@@ -1,0 +1,95 @@
+name: Docker Release
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    tags:
+      - "*"
+    branches:
+      - main
+
+concurrency:
+  cancel-in-progress: true
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.resolve.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: Resolve release version
+        id: resolve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            version="${{ github.ref_name }}"
+          else
+            version=$(paws semver --branch main)
+          fi
+          echo "Resolved version: $version"
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  docker-release:
+    needs: version
+    name: paws docker (${{ matrix.name }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: frontend
+            dockerfile: Dockerfile
+            context: ./frontend
+          - name: backend
+            dockerfile: Dockerfile
+            context: ./backend
+          - name: ingress
+            dockerfile: Dockerfile
+            context: ./ingress
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: paws docker
+        env:
+          DOCKER_TOKEN: ${{ secrets.DOCKER_TOKEN }}
+        run: |
+          paws docker \
+            --image "mbround18/showcase-yourself-${{ matrix.name }}" \
+            --version "${{ needs.version.outputs.version }}" \
+            --dockerfile "${{ matrix.dockerfile }}" \
+            --context "${{ matrix.context }}" \
+            --with-latest \
+            --dockerhub-username mbround18
+
+  tagger:
+    needs: [version, docker-release]
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: Compute and push next tag
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: paws semver --branch main --push
