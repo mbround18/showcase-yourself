@@ -49,13 +49,13 @@ jobs:
       matrix:
         include:
           - name: frontend
-            dockerfile: ./frontend/Dockerfile
+            dockerfile: Dockerfile
             context: ./frontend
           - name: backend
-            dockerfile: ./backend/Dockerfile
+            dockerfile: Dockerfile
             context: ./backend
           - name: ingress
-            dockerfile: ./ingress/Dockerfile
+            dockerfile: Dockerfile
             context: ./ingress
     steps:
       - uses: actions/checkout@v7
