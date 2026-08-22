@@ -20,6 +20,7 @@ mod config;
 mod contact;
 mod csrf;
 mod models;
+mod showcase;
 
 use config::AppConfig;
 
@@ -110,6 +111,8 @@ async fn main() -> std::io::Result<()> {
         .unwrap();
 
     let frontend_url = app_config.frontend_url.clone();
+    let showcase_content_path = env::var("SHOWCASE_CONTENT_PATH")
+        .unwrap_or_else(|_| "/etc/showcase/showcase.json".to_string());
 
     HttpServer::new(move || {
         let cors = Cors::default()
@@ -151,7 +154,9 @@ async fn main() -> std::io::Result<()> {
                 owner_email: app_config.owner_email.clone(),
                 frontend_url: app_config.frontend_url.clone(),
             }))
+            .app_data(web::Data::new(showcase_content_path.clone()))
             .route("/csrf", web::get().to(csrf::get_csrf))
+            .route("/showcase", web::get().to(showcase::get_showcase))
             .route("/contact", web::post().to(contact::contact))
             .route("/auth/login", web::get().to(auth::login))
             .route("/auth/callback", web::get().to(auth::callback))

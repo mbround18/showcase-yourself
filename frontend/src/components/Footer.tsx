@@ -1,6 +1,8 @@
-import showcase from "../showcase.json"
+import { useShowcase } from "@/lib/ShowcaseProvider"
 
 export function Footer() {
+  const showcase = useShowcase()
+
   return (
     <footer className="border-t py-8 text-center text-sm text-muted-foreground">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-2 px-6">

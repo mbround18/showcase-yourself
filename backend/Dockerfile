@@ -14,6 +14,7 @@ RUN cargo build --release --target=x86_64-unknown-linux-musl
 FROM alpine:latest
 
 COPY --from=build /app/target/x86_64-unknown-linux-musl/release/backend /backend
+COPY showcase.json /etc/showcase/showcase.json
 
 RUN ls -la /
 
