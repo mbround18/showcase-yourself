@@ -1,10 +1,11 @@
 import { ExternalLink, MapPin } from "lucide-react"
+import { Link } from "react-router-dom"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import showcase from "../showcase.json"
 
-export function Home({ setPage }: { setPage: (page: string) => void }) {
+export function Home() {
   const initials = showcase.name
     .split(" ")
     .map((part) => part[0])
@@ -45,11 +46,11 @@ export function Home({ setPage }: { setPage: (page: string) => void }) {
       </p>
 
       <div className="flex flex-wrap items-center justify-center gap-3">
-        <Button size="lg" onClick={() => setPage("projects")}>
-          View Projects
+        <Button size="lg" asChild>
+          <Link to="/projects">View Projects</Link>
         </Button>
-        <Button size="lg" variant="outline" onClick={() => setPage("contact")}>
-          Get in Touch
+        <Button size="lg" variant="outline" asChild>
+          <Link to="/contact">Get in Touch</Link>
         </Button>
       </div>
 

@@ -1,19 +1,75 @@
-# Simple Professional Website
+# showcase-yourself
 
-[![XO code style](https://img.shields.io/badge/code_style-XO-5ed9c7.svg)](https://github.com/xojs/xo)
-[![Known Vulnerabilities](https://snyk.io/test/github/mbround18/showcase-yourself/badge.svg?targetFile=package.json)](https://snyk.io/test/github/mbround18/showcase-yourself?targetFile=package.json)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ca22d859-17fc-4007-9250-74881b51811b/deploy-status)](https://app.netlify.com/sites/silly-edison-e92c70/deploys)
+A personal portfolio site: React/Vite frontend, an Actix (Rust) backend, MongoDB for
+storage, and generic OpenID Connect sign-in (Keycloak locally, any OIDC-compliant
+provider in production) backing an owner-only admin portal for contact submissions.
 
-Revamping in Rust+Yew for WebAssembly!
+## Architecture
 
-## Setup
+- `frontend/` — React + Vite + Tailwind, served as static files by nginx in
+  production, by Vite's dev server locally.
+- `backend/` — Actix Web (Rust). Owns Mongo, session cookies, CSRF, OAuth/OIDC, and
+  the admin API. See `specs/001-oauth-admin-portal/` for the design.
+- `ingress/` — nginx reverse proxy: `/api/*` → backend, everything else → frontend.
+  This is the single entry point (`http://localhost:5173` locally).
+- `mongo`, `keycloak` + `keycloak-db` — data store and local/dev identity provider,
+  defined in `compose.yaml`.
 
-1. Clone or fork+clone this repository.
-2. Run `yarn` to install dependencies
-3. Create a config file and either add it to a gist or host it somewhere. [Click here to see an example of the config file](https://gist.github.com/mbround18/d325e49f21e4d99a1ceea988458fc897)
-4. Set an env variable called `CONFIG_URL` to be your gist url or hosted config.json
+Authorization model: **the backend is the sole authority.** Every admin-only
+operation is enforced server-side (see `backend/src/auth.rs`'s `AdminUser`
+extractor), independent of anything the frontend does. The frontend's route guard
+(`RequireOwner`) re-checks `GET /api/auth/me` against the backend on every protected
+route entry rather than trusting cached client state.
 
-> If you are using gist, you can use `https://gist.githubusercontent.com/{username}/{gist-hash}/raw/{file}`
+## Local development
 
-5. Build the app `yarn generate`
-6. Publish your static files from `./dist`
+```sh
+cp compose.env.example compose.env   # then fill in real values, see below
+npm run up                           # docker compose up -d --build
+```
+
+Visit `http://localhost:5173`. The compose stack seeds a local Keycloak realm
+(`ops/keycloak/realm-export.json`) with two test users so sign-in works out of the
+box:
+
+| Username  | Password           | Role (via `OWNER_EMAIL_ADDRESS`) |
+| --------- | ------------------ | --------------------------------- |
+| `owner`   | `owner-password`   | owner — gets `/admin`             |
+| `visitor` | `visitor-password` | visitor                           |
+
+`npm run dev` starts the hot-reloading dev variant (`frontend-dev`, `backend-dev`)
+instead. `npm run down` tears the stack down.
+
+### Env vars (`compose.env`, gitignored — copy from `compose.env.example`)
+
+| Var | Purpose |
+| --- | --- |
+| `DATABASE_URL` | Mongo connection string |
+| `OWNER_EMAIL_ADDRESS` | Email that, once signed in via OIDC, grants the `owner` role |
+| `OIDC_ISSUER_URL` | OIDC discovery issuer, reachable from the **backend** |
+| `OIDC_CLIENT_ID` / `OIDC_CLIENT_SECRET` | Your OIDC client credentials |
+| `OIDC_REDIRECT_URL` | Backend's own callback, reachable from the **browser** |
+| `OIDC_RESOLVE_DOMAIN` / `OIDC_RESOLVE_VIA` | Optional dev-only escape hatch: when the issuer hostname (needed for issuer-consistency with what the browser uses) isn't directly routable from inside the backend's container, resolve it to something that is. Unset in production against a real IdP. |
+| `SESSION_SECRET` | Signs the session cookie |
+| `SESSION_COOKIE_SECURE` | Set `true` in production (HTTPS); `false` for local plain-HTTP dev |
+| `FRONTEND_URL` | Used for CORS and post-login redirects |
+
+Swapping the local Keycloak for a real OIDC provider (Auth0, Google, Okta, a hosted
+Keycloak, ...) in production is a config change only — the backend speaks generic
+OIDC, nothing provider-specific.
+
+## Tests
+
+```sh
+npm run test:backend   # cargo test
+npm run test:e2e       # Playwright, against a running compose stack
+npm test                # both
+```
+
+CI (`.github/workflows/docker-release.yml`) runs both before publishing images.
+
+## Linting
+
+```sh
+npm run lint    # frontend (oxlint) + backend (cargo fmt --check, cargo clippy)
+```

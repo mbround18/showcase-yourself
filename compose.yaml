@@ -15,6 +15,7 @@ services:
     depends_on:
       - frontend
       - backend
+      - keycloak
     networks:
       - showcase
   frontend-dev:
@@ -37,6 +38,11 @@ services:
     command: /backend
     env_file:
       - compose.env
+    depends_on:
+      keycloak:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - showcase
   backend-dev:
@@ -49,6 +55,11 @@ services:
       - ./backend:/app
     env_file:
       - compose.env
+    depends_on:
+      keycloak:
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     networks:
       - showcase
   mongo:
@@ -59,9 +70,46 @@ services:
       - mongo-data:/data/db
     networks:
       - showcase
+  keycloak-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: keycloak
+      POSTGRES_USER: keycloak
+      POSTGRES_PASSWORD: keycloak
+    volumes:
+      - keycloak-db-data:/var/lib/postgresql/data
+    networks:
+      - showcase
+  keycloak:
+    image: quay.io/keycloak/keycloak:26.0
+    command: start-dev --import-realm
+    environment:
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://keycloak-db:5432/keycloak
+      KC_DB_USERNAME: keycloak
+      KC_DB_PASSWORD: keycloak
+      KC_BOOTSTRAP_ADMIN_USERNAME: admin
+      KC_BOOTSTRAP_ADMIN_PASSWORD: admin
+      KC_HOSTNAME_STRICT: "false"
+      KC_HTTP_ENABLED: "true"
+      KC_HEALTH_ENABLED: "true"
+    ports:
+      - "8180:8080"
+    volumes:
+      - ./ops/keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+    depends_on:
+      - keycloak-db
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/9000 && echo -e 'GET /health/ready HTTP/1.1\\r\\nhost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && cat <&3 | grep -q 'UP'"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+    networks:
+      - showcase
 
 networks:
   showcase:
 
 volumes:
   mongo-data:
+  keycloak-db-data:
