@@ -42,9 +42,9 @@ export interface ShowcaseData {
 }
 
 export async function fetchShowcase(): Promise<ShowcaseData> {
-  const response = await fetch("/showcase.json")
+  const response = await fetch("/api/showcase")
   if (!response.ok) {
-    throw new Error(`Failed to load /showcase.json: HTTP ${response.status}`)
+    throw new Error(`Failed to load /api/showcase: HTTP ${response.status}`)
   }
   return response.json()
 }
