@@ -120,9 +120,6 @@ jobs:
           - name: backend
             dockerfile: Dockerfile
             context: ./backend
-          - name: ingress
-            dockerfile: Dockerfile
-            context: ./ingress
     steps:
       - uses: actions/checkout@v7
         with:
