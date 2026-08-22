@@ -1,14 +1,15 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "Showcase Profile",
-  "description": "A schema for the data used in the showcase-yourself project.",
+  "description": "A schema for the data used in the showcase-yourself project. Fetched at runtime from /showcase.json, so one image can serve different profiles per deployment.",
   "type": "object",
   "properties": {
     "name": {
       "type": "string"
     },
     "github_username": {
-      "type": "string"
+      "type": "string",
+      "description": "Optional -- only needed if pinned_repositories/top_repositories are used for a GitHub-portfolio-style profile."
     },
     "profile": {
       "type": "object",
@@ -55,18 +56,34 @@
     },
     "pinned_repositories": {
       "type": "array",
+      "description": "Optional -- for a GitHub-portfolio-style profile.",
       "items": {
         "$ref": "#/definitions/repository"
       }
     },
     "top_repositories": {
       "type": "array",
+      "description": "Optional -- for a GitHub-portfolio-style profile.",
       "items": {
         "$ref": "#/definitions/repository"
       }
+    },
+    "experience": {
+      "type": "array",
+      "description": "Optional -- for a resume-style profile. Rendered as a work history timeline.",
+      "items": {
+        "$ref": "#/definitions/experience"
+      }
+    },
+    "education": {
+      "type": "array",
+      "description": "Optional -- for a resume-style profile.",
+      "items": {
+        "$ref": "#/definitions/education"
+      }
     }
   },
-  "required": ["name", "github_username", "profile", "links", "skills", "pinned_repositories", "top_repositories"],
+  "required": ["name", "profile", "links", "skills"],
   "definitions": {
     "repository": {
       "type": "object",
@@ -92,6 +109,51 @@
         }
       },
       "required": ["name", "description", "url", "stars", "forks", "language"]
+    },
+    "experience": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "company": {
+          "type": "string"
+        },
+        "location": {
+          "type": "string"
+        },
+        "start_date": {
+          "type": "string"
+        },
+        "end_date": {
+          "type": "string"
+        },
+        "highlights": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": ["title", "company", "start_date", "highlights"]
+    },
+    "education": {
+      "type": "object",
+      "properties": {
+        "school": {
+          "type": "string"
+        },
+        "credential": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        },
+        "details": {
+          "type": "string"
+        }
+      },
+      "required": ["school", "credential"]
     }
   }
 }

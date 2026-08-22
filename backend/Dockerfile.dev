@@ -7,5 +7,6 @@ RUN cargo install cargo-watch
 WORKDIR /app
 
 COPY . .
+COPY showcase.json /etc/showcase/showcase.json
 
 CMD ["cargo", "watch", "-x", "run"]
