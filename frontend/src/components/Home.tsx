@@ -3,21 +3,28 @@ import { Link } from "react-router-dom"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import showcase from "../showcase.json"
+import { useShowcase } from "@/lib/ShowcaseProvider"
 
 export function Home() {
+  const showcase = useShowcase()
   const initials = showcase.name
     .split(" ")
     .map((part) => part[0])
     .join("")
+  const hasRepos =
+    (showcase.pinned_repositories?.length ?? 0) > 0 ||
+    (showcase.top_repositories?.length ?? 0) > 0
+  const projectsLabel = hasRepos ? "View Projects" : "View Experience"
 
   return (
     <section className="mx-auto flex w-full max-w-7xl flex-col items-center gap-8 px-6 py-16 text-center sm:py-20 3xl:max-w-5xl 3xl:py-28">
       <Avatar className="h-28 w-28 border-4 border-background shadow-lg sm:h-36 sm:w-36 3xl:h-44 3xl:w-44">
-        <AvatarImage
-          src={`https://github.com/${showcase.github_username}.png`}
-          alt={showcase.name}
-        />
+        {showcase.github_username && (
+          <AvatarImage
+            src={`https://github.com/${showcase.github_username}.png`}
+            alt={showcase.name}
+          />
+        )}
         <AvatarFallback className="text-3xl">{initials}</AvatarFallback>
       </Avatar>
 
@@ -47,7 +54,7 @@ export function Home() {
 
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Button size="lg" asChild>
-          <Link to="/projects">View Projects</Link>
+          <Link to="/projects">{projectsLabel}</Link>
         </Button>
         <Button size="lg" variant="outline" asChild>
           <Link to="/contact">Get in Touch</Link>

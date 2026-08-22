@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { fetchCsrfToken, loginUrl, logout } from "@/lib/auth"
 import { useAuth } from "@/hooks/useAuth"
-import showcase from "../showcase.json"
+import { useShowcase } from "@/lib/ShowcaseProvider"
 
 const NAV_ITEMS = [
   { path: "/", label: "Home" },
@@ -20,6 +20,7 @@ export function Header() {
   const { auth, refresh } = useAuth()
   const location = useLocation()
   const navigate = useNavigate()
+  const showcase = useShowcase()
 
   const initials = showcase.name
     .split(" ")
