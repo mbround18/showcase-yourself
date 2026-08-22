@@ -53,3 +53,4 @@
 
 ## CI
 - [x] CI job: bring up stack, run `cargo test` + `playwright test`, gate `docker-release`
+- [x] Reworked into `test-backend` (`paws ci --toolchain rust`: fmt --check, clippy, build, test), `test-frontend` (`paws ci --toolchain node`: oxlint, tsc+vite build; added a `test` script since `paws ci` requires one), and `e2e` (unchanged docker-compose + Playwright) -- `docker-release` now gates on all three instead of just backend tests

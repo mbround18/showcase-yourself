@@ -40,16 +40,32 @@ jobs:
           echo "Resolved version: $version"
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
-  test:
+  test-backend:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
 
-      - uses: dtolnay/rust-toolchain@stable
+      - uses: mbround18/paws/actions/paws-up@main
 
-      - name: cargo test
+      - name: paws ci (rust)
         working-directory: backend
-        run: cargo test
+        run: paws ci --toolchain rust
+
+  test-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: paws ci (node)
+        working-directory: frontend
+        run: paws ci --toolchain node
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-node@v5
         with:
@@ -91,7 +107,7 @@ jobs:
         run: docker compose down -v
 
   docker-release:
-    needs: [version, test]
+    needs: [version, test-backend, test-frontend, e2e]
     name: paws docker (${{ matrix.name }})
     runs-on: ubuntu-latest
     strategy:
