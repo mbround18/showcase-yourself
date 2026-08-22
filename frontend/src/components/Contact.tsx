@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { useEffect, useState } from "react"
+import { fetchCsrfToken, fetchMe } from "@/lib/auth"
 
 export function Contact() {
   const [name, setName] = useState("")
@@ -20,12 +21,10 @@ export function Contact() {
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
-    const fetchCsrfToken = async () => {
-      const response = await fetch("/api/csrf")
-      const token = await response.json()
-      setCsrfToken(token)
-    }
-    fetchCsrfToken()
+    fetchCsrfToken().then(setCsrfToken)
+    fetchMe().then((auth) => {
+      if (auth.email) setEmail(auth.email)
+    })
   }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -39,6 +38,7 @@ export function Contact() {
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
+        credentials: "include",
         headers: {
           "Content-Type": "application/json",
           "X-CSRF-Token": csrfToken,

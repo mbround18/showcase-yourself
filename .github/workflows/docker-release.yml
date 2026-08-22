@@ -40,8 +40,74 @@ jobs:
           echo "Resolved version: $version"
           echo "version=$version" >> "$GITHUB_OUTPUT"
 
+  test-backend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: paws ci (rust)
+        working-directory: backend
+        run: paws ci --toolchain rust
+
+  test-frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: mbround18/paws/actions/paws-up@main
+
+      - name: paws ci (node)
+        working-directory: frontend
+        run: paws ci --toolchain node
+
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Install e2e dependencies
+        working-directory: e2e
+        run: npm install
+
+      - name: Install Playwright browsers
+        working-directory: e2e
+        run: npx playwright install --with-deps chromium
+
+      - name: Start the stack
+        run: |
+          cp compose.env.example compose.env
+          docker compose up -d --build
+
+      - name: Wait for the ingress to answer
+        run: |
+          for i in $(seq 1 60); do
+            if curl -sf http://localhost:5173/ > /dev/null; then exit 0; fi
+            sleep 2
+          done
+          echo "Stack did not become ready in time" >&2
+          docker compose logs
+          exit 1
+
+      - name: Run Playwright e2e tests
+        working-directory: e2e
+        run: npx playwright test
+
+      - name: Show logs on failure
+        if: failure()
+        run: docker compose logs
+
+      - name: Tear down the stack
+        if: always()
+        run: docker compose down -v
+
   docker-release:
-    needs: version
+    needs: [version, test-backend, test-frontend, e2e]
     name: paws docker (${{ matrix.name }})
     runs-on: ubuntu-latest
     strategy:

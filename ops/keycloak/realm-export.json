@@ -1,0 +1,43 @@
+{
+  "realm": "showcase",
+  "enabled": true,
+  "sslRequired": "none",
+  "clients": [
+    {
+      "clientId": "showcase-backend",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "secret": "dev-secret-change-me",
+      "redirectUris": ["http://localhost:5173/api/auth/callback"],
+      "webOrigins": ["http://localhost:5173"],
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": true,
+      "serviceAccountsEnabled": false
+    }
+  ],
+  "users": [
+    {
+      "username": "owner",
+      "email": "owner@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Site",
+      "lastName": "Owner",
+      "credentials": [
+        { "type": "password", "value": "owner-password", "temporary": false }
+      ]
+    },
+    {
+      "username": "visitor",
+      "email": "visitor@example.com",
+      "emailVerified": true,
+      "enabled": true,
+      "firstName": "Test",
+      "lastName": "Visitor",
+      "credentials": [
+        { "type": "password", "value": "visitor-password", "temporary": false }
+      ]
+    }
+  ]
+}
