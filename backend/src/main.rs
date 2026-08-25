@@ -52,7 +52,20 @@ async fn main() -> std::io::Result<()> {
         RedirectUrl::new(env::var("OIDC_REDIRECT_URL").expect("OIDC_REDIRECT_URL must be set"))
             .expect("OIDC_REDIRECT_URL must be a valid URL");
 
+    // Identify ourselves explicitly. reqwest's default User-Agent (and an
+    // absent one) trips bot protection in front of some IdPs -- Cloudflare's
+    // bot fight mode, for instance, answers those with a JS challenge that no
+    // server-side client can solve, so discovery fails with a 403 and the
+    // process dies on startup. A named application UA passes.
+    let oidc_user_agent = env::var("OIDC_USER_AGENT").unwrap_or_else(|_| {
+        format!(
+            "showcase-yourself/{} (+https://github.com/mbround18/showcase-yourself)",
+            env!("CARGO_PKG_VERSION")
+        )
+    });
+
     let mut oidc_http_client_builder = openidconnect::reqwest::ClientBuilder::new()
+        .user_agent(oidc_user_agent)
         .redirect(openidconnect::reqwest::redirect::Policy::none());
 
     // Dev/local escape hatch: when the OIDC issuer's hostname (as seen by both
