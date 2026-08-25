@@ -1,5 +1,5 @@
 # Stage 1: Build the Rust app
-FROM rust:1.97.1-slim AS build
+FROM rust:1.98.0-slim AS build
 
 RUN rustup target add x86_64-unknown-linux-musl
 RUN apt-get update && apt-get install -y musl-tools
